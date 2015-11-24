@@ -10,18 +10,18 @@ $(SLATE_GIT_HACK):
 	ln -s $(ROOT_DIR)/.git $(DOCS_DIR)
 
 docs-setup:
-	cd docs && bundle install
+	cd $(DOCS_DIR) && bundle install
 
-devdocs: $(SLATE_GIT_HACK)
-	cd docs && bundle exec middleman server
+devdocs:
+	cd $(DOCS_DIR) && bundle exec middleman server
 
-docs: $(SLATE_GIT_HACK)
-	cd docs && rake build
+docs:
+	cd $(DOCS_DIR) && rake build
 
 commit:
 	-git commit -a && git push --all
 
-setup-temp-repo:
+setup-temp-repo: $(SLATE_GIT_HACK)
 	rm -rf $(DOCS_PROD_DIR)/current $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 	cp -r $(DOCS_BUILD_DIR) $(DOCS_PROD_DIR)/current
 	cd $(DOCS_PROD_DIR) && git init
@@ -29,7 +29,7 @@ setup-temp-repo:
 	cd $(DOCS_PROD_DIR) && git commit -a -m "Generated content." > /dev/null
 
 teardown-temp-repo:
-	rm $(DOCS_DIR)/.git
+	rm $(DOCS_DIR)/.git $(DOCS_DIR)/Gemfile.lock
 	rm -rf $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 
 publish: commit docs setup-temp-repo
