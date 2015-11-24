@@ -1,6 +1,7 @@
 .PHONY: docs
 REPO = $(shell git config --get remote.origin.url)
-DOCS_DIR = docs
+CWD = $(shell pwd)
+DOCS_DIR = $(CWD)/docs
 DOCS_BUILD_DIR = $(DOCS_DIR)/build
 DOCS_PROD_DIR = $(DOCS_DIR)/master
 SLATE_GIT_HACK = $(DOCS_DIR)/.git
