@@ -27,12 +27,13 @@ setup-temp-repo:
 	cd $(DOCS_PROD_DIR) && \
 	git init && \
 	git add * &> /dev/null && \
-	git commit -a -m "Generated content." &> /dev/null && \
+	git commit -a -m "Generated content." &> /dev/null
 
 teardown-temp-repo:
 	rm $(DOCS_DIR)/.git
 	rm -rf $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 
 publish: commit docs setup-temp-repo
+	cd $(DOCS_PROD_DIR) && \
 	git push -f $(REPO) master:gh-pages
 	make teardown-temp-repo
