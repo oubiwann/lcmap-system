@@ -28,4 +28,4 @@ publish: commit docs
 	git add * &> /dev/null && \
 	git commit -a -m "Generated content." &> /dev/null && \
 	git push -f $(REPO) master:gh-pages
-	rm -rf $(DOCS)/.git $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
+	rm -rf $(DOCS_DIR)/.git $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
