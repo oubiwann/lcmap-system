@@ -2,8 +2,10 @@
 
 *Developer documentation for the family of LCMAP clients*
 
-![][lcmap-logo]
+[![][lcmap-logo]][lcmap-logo-large]
+
 [lcmap-logo]: images/lcmap-logo-1-250px.png
+[lcmap-logo-large]: images/lcmap-logo-1-1000px.png
 
 
 [TBD]
