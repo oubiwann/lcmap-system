@@ -7,6 +7,10 @@ ifeq ($(OS),Darwin)
 		HOST = $(shell scutil --get ComputerName)
 endif
 
+setup:
+	sudo gem install bundler
+	cd docs && bundle install
+
 push-all:
 	@echo "Pusing code to github ..."
 	git push --all
