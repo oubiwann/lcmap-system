@@ -48,7 +48,10 @@ under the License.
       </span>
     </a>
     <div class="tocify-wrapper">
-      <div class="content"><span class="title"><%= current_page.data.title || "API Documentation" %></span></div>
+      <div class="content">
+        <div class="logo">
+        </div>
+        <span class="title"><%= current_page.data.title || "API Documentation" %></span></div>
       <% if language_tabs %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
