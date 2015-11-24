@@ -22,7 +22,7 @@ commit:
 	-git commit -a && git push --all
 
 publish: commit docs
-	rm -rf $(DOCS_PROD_DIR)/current
+	rm -rf $(DOCS_PROD_DIR)/current $(DOCS_DIR)/.git $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 	cp -r $(DOCS_BUILD_DIR) $(DOCS_PROD_DIR)/current
 	cd $(DOCS_PROD_DIR) && \
 	git init && \
