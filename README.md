@@ -2,6 +2,11 @@
 
 *Developer documentation for the family of LCMAP clients*
 
+[![][lcmap-logo]][lutil-logo-large]
+
+[lcmap-logo]: resources/images/lcmap-logo-1-250px.png
+[lcmap-logo-large]: resources/images/lcmap-logo-1-1000px.png
+
 ##### Table of Contents
 
 * [About](#about-)
