@@ -25,7 +25,7 @@ setup-temp-repo:
 	rm -rf $(DOCS_PROD_DIR)/current $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 	cp -r $(DOCS_BUILD_DIR) $(DOCS_PROD_DIR)/current
 	cd $(DOCS_PROD_DIR) && git init
-	cd $(DOCS_PROD_DIR) && git add *
+	cd $(DOCS_PROD_DIR) && git add * > /dev/null
 	cd $(DOCS_PROD_DIR) && git commit -a -m "Generated content." &> /dev/null
 
 teardown-temp-repo:
