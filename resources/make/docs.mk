@@ -21,13 +21,18 @@ docs: $(SLATE_GIT_HACK)
 commit:
 	-git commit -a && git push --all
 
-publish: commit docs
+setup-temp-repo:
 	rm -rf $(DOCS_PROD_DIR)/current $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 	cp -r $(DOCS_BUILD_DIR) $(DOCS_PROD_DIR)/current
 	cd $(DOCS_PROD_DIR) && \
 	git init && \
 	git add * &> /dev/null && \
 	git commit -a -m "Generated content." &> /dev/null && \
-	git push -f $(REPO) master:gh-pages
+
+teardown-temp-repo:
 	rm $(DOCS_DIR)/.git
 	rm -rf $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
+
+publish: commit docs setup-temp-repo
+	git push -f $(REPO) master:gh-pages
+	make teardown-temp-repo
