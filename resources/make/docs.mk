@@ -21,13 +21,11 @@ commit:
 	-git commit -a && git push --all
 
 publish: commit docs
-	rm -rf $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/current
+	rm -rf $(DOCS_PROD_DIR)/current
 	cp -r $(DOCS_BUILD_DIR) $(DOCS_PROD_DIR)/current
-	rm -rf $(DOCS_PROD_DIR)/*/.git
 	cd $(DOCS_PROD_DIR) && \
 	git init && \
 	git add * &> /dev/null && \
 	git commit -a -m "Generated content." &> /dev/null && \
 	git push -f $(REPO) master:gh-pages
-	cd $(DOCS_DIR) && \
-	rm .git
+	rm -rf $(DOCS)/.git $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
