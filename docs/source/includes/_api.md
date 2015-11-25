@@ -227,33 +227,3 @@ without having to send the entire payload like is recommended with ``PUT``.
 
 [Code ready, need docs]
 
-# Custom Results Parsing
-
-[Code ready, need docs]
-
-# From Erlang
-
-> Basic usage from Erlang is straight-forward:
-
-```erlang
-1> lhc:start().
-[{inets,ok},{ssl,ok},{lhttpc,ok},{lhc,ok}]
-2> lhc:get("http://localhost:8000/demos/store3/orders").
-"{\"result\": \"You got a list of orders.\"}"
-3> Payload = ljson:encode([{make,<<"Volvo">>},{model,<<"P1800">>}]).
-<<"{\"make\":\"Volvo\",\"model\":\"P1800\"}">>
-4> lhc:post("http://localhost:8000/demos/store3/order", Payload).
-"{\"result\": \"{\"order-id\": 124}\"}"
-```
-
-Using lhc from Erlang is very straight-forward; there aren't even hypens in
-most module or function names, so no need to escape any atoms!
-
-Why would you want to, you ask? Well, it might be convenient to use a library
-that offers consistent usage patterns (and function calls) across a selection
-of HTTP clients in the Erlang ecosystem. You and your developers could write
-your HTTP code once, and then change backend clients as the needs arose,
-without having to change any code (just some small configuration settings).
-
-Take a look at the sample usage to the right to get a sense of using lhc from
-Erlang.

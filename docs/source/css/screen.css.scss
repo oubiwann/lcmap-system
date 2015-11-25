@@ -658,3 +658,31 @@ div.tocify-wrapper div.content div.logo {
   padding-bottom: 1em;
   height: 80px;
 }
+
+.status-not-started {
+  color: #DD4444;
+}
+
+.status-initial-stages {
+  color: #DD8844;
+}
+
+.status-in-progress {
+  color: #BBBB22;
+}
+
+.status-alpha {
+  color: #8844DD;
+}
+
+.status-beta {
+  color: #4488DD;
+}
+
+.status-pre-release {
+  color: #44DDDD;
+}
+
+.status-released{
+  color: #44DD44;
+}

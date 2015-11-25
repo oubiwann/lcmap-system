@@ -2,10 +2,10 @@
 title: LCMAP @ USGS EROS - Client Library Documentation
 
 language_tabs:
-  - cURL
-  - Clojure
-  - Python
-  - Julia
+  - shell: cURL
+  - python: Python
+  - vb: Julia
+  - clojure: Clojure
 
 toc_footers:
   - <a href='https://github.com/USGS-EROS/lcmap-client-docs/'>View the source</a>
@@ -13,6 +13,7 @@ toc_footers:
 
 includes:
   - intro
+  - install
   - api
   - backends
   - misc
