@@ -1,19 +1,19 @@
-LIB = $(PROJECT)
 OS := $(shell uname -s)
 ifeq ($(OS),Linux)
-		HOST=$(HOSTNAME)
+		HOST = $(HOSTNAME)
+		GEM = sudo gem
 endif
 ifeq ($(OS),Darwin)
 		HOST = $(shell scutil --get ComputerName)
+		GEM = gem
 endif
 
-setup:
-	sudo gem install bundler
-	cd docs && bundle install
+LIB = $(PROJECT)
 
-push-all:
-	@echo "Pusing code to github ..."
-	git push --all
-	git push upstream --all
-	git push --tags
-	git push upstream --tags
+update:
+	$(GEM) update --system
+	$(GEM) update
+
+setup:
+	$(GEM) install bundler
+	make docs-setup
