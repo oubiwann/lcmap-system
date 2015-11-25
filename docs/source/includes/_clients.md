@@ -24,7 +24,7 @@ Clojure Status: IN PROGRESS
 Ruby Status: NOT STARTED
 ```
 
-Of the latter, we plan to provide the following language support:
+We plan to provide the following client libraries for LCMAP:
 
 * Python <span class="status-initial-stages">[INITIAL STAGES]</span>
 * Julia <span class="status-not-started">[NOT STARTED]</span>
