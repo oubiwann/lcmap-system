@@ -8,6 +8,9 @@ echo "YOUR_USERNAME" > cat ~/.usgs/username
 echo "YOUR_PASSWORD" > cat ~/.usgs/password
 chmod 600 ~/.usgs/*
 ```
+<aside class="info">
+Remember, to authenticate against the LCMAP service you will need to have registered with the <a href="https://ers.cr.usgs.gov/login/">USGS ERS</a> service.
+</aside>
 
 ## Authentication
 
