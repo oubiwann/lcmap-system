@@ -15,7 +15,6 @@ includes:
   - intro
   - install
   - api
-  - backends
   - misc
   - versions
   - license

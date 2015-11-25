@@ -16,8 +16,11 @@ docs-setup:
 devdocs:
 	cd $(DOCS_DIR) && bundle exec middleman server
 
-docs:
-	cd $(DOCS_DIR) && rake build
+clean-build:
+	rm -rf $(DOCS_BUILD_DIR)
+
+docs: clean-build
+	cd $(DOCS_DIR) && bundle exec middleman build --clean
 
 commit:
 	-git commit -a && git push --all
