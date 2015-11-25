@@ -1,11 +1,28 @@
 # User Agent
 
-> The lhc user agent string:
+> The LCMAP clients user agent string:
 
-```
-"LFE Little HTTP Client/0.1.0 (LFE 0.10.0-dev; Erlang 18; backend=lhttpc) (+http://github.com/lfex/lhc)"
+```shell
+# The cURL user agent string is used without alteration
+TBD
 ```
 
-The lhc user agent will show up in any HTTP server log files where client user
-agent strings are recorded. To the right is an example of the lhc user agent
-string.
+```python
+Python: TBD
+```
+
+```vb
+Julia: TBD
+```
+
+```clojure
+Clojure: TBD
+```
+
+```ruby
+Ruby: TBD
+```
+
+Each client provides a user agent string that identifies it and provides contextual information (e.g., verision and location of source code.
+
+The exact value of the user agent string will differ depending upon the client library you have selected.
