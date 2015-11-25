@@ -78,12 +78,12 @@ Even while the greater LCMAP systm is under development, we are creating client 
 
 
 ```shell
-curl -v -X POST \
+curl -s -X POST \
   -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
   -d "username=`cat ~/.usgs/username`" \
   -d "password=`cat ~/.usgs/password`" \
   http://localhost:8080/api/auth/login | \
-  jq '.token'
+  jq -r '.token'
 ```
 ```shell
 3efc6475b5034309af00549a77b7a6e3
@@ -92,10 +92,13 @@ curl -v -X POST \
 > After authenticating, all cURL requests need to provide your access key via the ``X-AuthToken`` header:
 
 ```shell
-curl -v -X POST \
+curl -s -X POST \
   -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
   -H "X-AuthToken: 3efc6475b5034309af00549a77b7a6e3" \
   'http://localhost:8080/api/L3/sample/model?seconds=15&year=2016'
+```
+```shell
+{"result":{"link":"/api/L3/sample/model/a4881a10c0026ee8bb4a50556bd665bc"}}
 ```
 
 There are two ways in which one may interact with the LCMAP system as a
