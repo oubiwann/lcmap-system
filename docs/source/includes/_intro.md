@@ -15,6 +15,38 @@ The intent of the Land Change Monitoring Assessment and Projection (LCMAP) initi
 The system capacity and functionality needed to support the magnitude of long-term time series analysis is expected to employ Earth data science, demanding highly specialized computing environments to execute large scale analysis.
 
 
+### Land Change
+
+Land-change science is about understanding changes in the type, intensity, condition, and location of land use and cover as indications of possible impacts to and from the interactions between people and nature.
+
+Toward this aim, the LCMAP system's goals are to:
+
+1. Provide users and science models with direct access to a vast amount of Analysis Ready Data.
+
+1. Assess and project changes to land cover, use, and condition.
+
+1. Provide science users the means to continuously monitor and classify changes.
+
+1. Support decision making relevant to environmental management and policy.
+
+1. Enable discovery and distribution of information derived by science models through many channels, to many user communities.
+
+
+### System Architecture
+
+The system architecture and the components of which it is comprised has been designed to fulfill the LCMAP science user experience:
+
+1. Access and Exploration - enables discovery, visualization, reporting, notification, and other access methods via REST resources and GIS standards for services and file formats.
+
+1. Subscription and notification services - allows science users to continuously monitor land change data for events of particular interest.
+
+1. Science Execution Environment (SEE) - enables rapid development, production, validation and deployment of science models.
+
+1. Information Warehouse and Data Store - contains decades of Analysis Ready Data as well as new data as it is obtained from satellites and science model outputs.
+
+1. Client Libraries, Documentation, and Tutorials - enable science users to automate the collection and processing of land change data and develop new science models.
+
+
 ## The REST Service
 
 Since the LCMAP system service proivdes REST resource over HTTP, all of the client libraries are essentially wrappers around HTTP client libraries. To provide the best possible developer experience, these libraries strive to handle configuration, cumbersom tasks, or multiple calls as cleanly as possible with as little direct intervention on the part of the user as makes good, clean sense.
