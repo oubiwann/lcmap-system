@@ -11,11 +11,28 @@ The supported models to-date are the following:
  * Mesos framework model <span class="status-not-started">[NOT STARTED]</span>
 * Continuous Change Detection and Classification (CCDC) <span class="status-initial-stages">[INITIAL STAGES]</span>
 
+
 ## Model Execution
+
+<aside class="caution">
+In order to execute models on the LCMAP system, you have to have been granted permission to do so for the specific model in question.
+</aside>
 
 ### Sample: OS Process Model
 
 This sample model simply executes as an OS process on a single core.
+
+> Execute a sample model for the year ``2017``, setting the results to delay for 10 seconds:
+
+```shell
+curl -s -X POST \
+  -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
+  -H "X-AuthToken: 3efc6475b5034309af00549a77b7a6e3" \
+  'http://localhost:8080/api/L3/sample/model?seconds=10&year=2017'
+```
+```shell
+{"result":{"link":"/api/L3/sample/model/a4881a10c0026ee8bb4a50556bd665bc"}}
+```
 
 ### Sample: Docker Process Model
 

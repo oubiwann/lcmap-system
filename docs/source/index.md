@@ -14,6 +14,7 @@ toc_footers:
 
 includes:
   - intro
+  - dev_env
   - clients
   - api_gen
   - api_query
