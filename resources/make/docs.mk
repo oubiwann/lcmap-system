@@ -8,7 +8,7 @@ DOCS_PROD_DIR = $(DOCS_DIR)/master
 SLATE_GIT_HACK = $(DOCS_DIR)/.git
 
 $(SLATE_GIT_HACK):
-	ln -s $(ROOT_DIR)/.git $(DOCS_DIR)
+	@ln -s $(ROOT_DIR)/.git $(DOCS_DIR)
 
 docs-setup:
 	@echo "\nInstalling and setting up dependencies ..."
@@ -23,15 +23,15 @@ clean-build:
 	@rm -rf $(DOCS_BUILD_DIR)
 
 docs: clean-build
-	@echo "\nBuilding docs ..."
+	@echo "\nBuilding docs ...\n"
 	@cd $(DOCS_DIR) && bundle exec middleman build --clean
 
 commit:
-	@echo "\nCommiting changes ..."
+	@echo "\nCommiting changes ...\n"
 	@-git commit -a && git push --all
 
 setup-temp-repo: $(SLATE_GIT_HACK)
-	@echo "\nSetting up temporary git repos for gh-pages ..."
+	@echo "\nSetting up temporary git repos for gh-pages ...\n"
 	@rm -rf $(DOCS_PROD_DIR)/current $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 	@cp -r $(DOCS_BUILD_DIR) $(DOCS_PROD_DIR)/current
 	@cd $(DOCS_PROD_DIR) && git init
@@ -44,6 +44,6 @@ teardown-temp-repo:
 	@rm -rf $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 
 publish: commit docs setup-temp-repo
-	@echo "\nPublishing docs ..."
+	@echo "\nPublishing docs ...\n"
 	@cd $(DOCS_PROD_DIR) && git push -f $(REPO) master:gh-pages
 	@make teardown-temp-repo
