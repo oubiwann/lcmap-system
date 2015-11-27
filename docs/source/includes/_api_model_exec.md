@@ -12,17 +12,16 @@ The supported models to-date are the following:
 * Continuous Change Detection and Classification (CCDC) <span class="status-initial-stages">[INITIAL STAGES]</span>
 
 
-## Model Execution
+## SAMPLE MODELS
 
 <aside class="caution">
 In order to execute models on the LCMAP system, you have to have been granted permission to do so for the specific model in question.
 </aside>
 
-### Sample: OS Process Model
 
-This sample model simply executes as an OS process on a single core.
+## Sample: OS Process Model
 
-> Execute a sample model for the year ``2017``, setting the results to delay for 2 minutes:
+> Execute the sample process model for the year ``2017``, setting the results to delay for 2 minutes:
 
 ```shell
 RESULT=`curl -s -X POST \
@@ -40,34 +39,42 @@ echo $RESULT_PATH
 curl -v ${LCMAP_ENDPOINT}${RESULT_PATH}
 ```
 
-### Sample: Docker Process Model
+This sample model simply executes an arbitrary binary (in this case, the ``cal`` program) as an OS process on a single core.
 
-Similar in nature to the OS Process Sample Model, this sample model executes a model by running a single Docker container.
+## Sample: Docker Process Model
 
-TBD
-
-
-### Sample: Mesos Docker model
-
-This sample model executes a Docker container across agent nodes in a Mesos cluster. Model parameters are split across a configurable number of nodes and results are combined in the final step of model execution.
-
-TBD
-
-
-### Sample: Mesos framework model
-
-This sample model executes a Mesos framework which has been tuned to parallelize on both the science model parameters and the required queries to the data warehouse. It is this combination of factors which are used to split work across a configurable number of nodes. Results are combined in the final step of model execution.
-
-TBD
-
-
-### Continuous Change Detection and Classification
-
-> Generate a CCDC model for the given extents, time-range, and ...:
+> Execute the sample Docker process model for the year ``2017``, setting the results to delay for 2 minutes:
 
 ```shell
 TBD
 ```
+
+Similar in nature to the OS Process Sample Model, this sample model executes a model by running a single Docker container.
+
+
+## Sample: Mesos Docker Model
+
+> Execute the sample Docker Mesos model for the year ``2017``, setting the results to delay for 2 minutes:
+
+```shell
+TBD
+```
+
+This sample model executes a Docker container across agent nodes in a Mesos cluster. Model parameters are split across a configurable number of nodes and results are combined in the final step of model execution.
+
+
+## Sample: Mesos framework Model
+
+> Execute the sample Mesos framework model for the year ``2017``, setting the results to delay for 2 minutes:
+
+```shell
+TBD
+```
+
+This sample model executes a Mesos framework which has been tuned to parallelize on both the science model parameters and the required queries to the data warehouse. It is this combination of factors which are used to split work across a configurable number of nodes. Results are combined in the final step of model execution.
+
+
+## CONTINUOUS CHANGE DETECTION AND CLASSIFICATION
 
 Continuous Change Detection and Classification (CCDC) is an algorithm for analyzing land cover using Landsat data. It is capable of detecting many kinds of land cover change continuously as new images are collected and providing land cover maps for any given time.
 
@@ -78,11 +85,20 @@ A time series model that has components of seasonality, trend, and break estimat
 Due to the differences in spectral response for various kinds of land cover change, the CCDC algorithm uses a threshold derived from all seven Landsat bands. When the difference between observed and predicted images exceeds a threshold three consecutive times, a pixel is identified as land surface change.
 
 
-## Results Storage
+## CCDC Execution
+
+> Generate a CCDC model for the given extents, time-range, and ...:
+
+```shell
+TBD
+```
+
+
+## CCDC Results Storage
 
 TBD
 
 
-## Model Prediction
+## CCDC Prediction
 
 TBD

@@ -70,3 +70,44 @@ git clone git@github.com:USGS-EROS/lcmap-client-clj.git
 Installation is dependent upon the client you want to use. How cURL gets installed is dependent upon your operating system , development platform, and/or package manater.
 
 The client library installations each have their own method of installation. See the notes to the right for per-language details.
+
+
+## Configuration
+
+Default user configuration should be saved in an LCMAP configuration file. Values stored here may be overridden by setting specific environment variables in your system shell.
+
+
+### Config/INI File
+
+> Set up your username and password.
+
+```shell
+mkdir ~/.usgs
+echo "alice" > cat ~/.usgs/username
+echo "secret" > cat ~/.usgs/password
+```
+
+> The ``~/.usgs/lcmap.ini`` is used by client libraries (but not cURL) to access user-configurable data. Here is a sample configuration:
+
+```ini
+[LCMAP Client]
+username = alice
+password = secret
+```
+
+> For the testing auth server you can use "alice" as the username and "secret" as the password. For accessing the production LCMAP service, you will use your [USGS ERS](https://ers.cr.usgs.gov/login/) credentials
+
+cURL is a special case, being a command line tool. It doesn't use the ``~/usgs/lcmap.ini`` file, rather it can be used to ``cat`` plain text files.
+
+
+> Be sure to protect your configuration files, especially if they contain sensitive information:
+
+```
+chmod 600 ~/.usgs/*
+```
+
+
+
+### ENV Variables
+
+TBD

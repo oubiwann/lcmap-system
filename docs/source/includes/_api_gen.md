@@ -2,14 +2,14 @@
 
 ## Client Initialization
 
+
 ```shell
-mkdir ~/.usgs
-echo "alice" > cat ~/.usgs/username
-echo "secret" > cat ~/.usgs/password
-chmod 600 ~/.usgs/*
+# No cURL client initialization is required
 ```
 
 ## Authentication
+
+> Obtain an API token:
 
 ```shell
 LCMAP_ENDPOINT=http://localhost:8080
