@@ -13,7 +13,7 @@ Python Status: INITIAL STAGES
 ```
 
 ```vb
-Julia Status: NOT STARTED
+Julia Status: INITIAL STAGES
 ```
 
 ```clojure
@@ -27,7 +27,7 @@ Ruby Status: NOT STARTED
 We plan to provide the following client libraries for LCMAP:
 
 * Python <span class="status-initial-stages">[INITIAL STAGES]</span>
-* Julia <span class="status-not-started">[NOT STARTED]</span>
+* Julia <span class="status-initial-stages">[INITIAL STAGES]</span>
 * Clojure <span class="status-in-progress">[IN PROGRESS]</span>
 * Ruby <span class="status-not-started">[NOT STARTED]</span>
 
@@ -55,6 +55,7 @@ git clone git@github.com:USGS-EROS/lcmap-client-py.git
 
 ```vb
 git clone git@github.com:USGS-EROS/lcmap-client-jl.git
+ln -s lcmap-client-jl ~/.julia/v0.4/LCMAPClient
 ```
 
 ```clojure
