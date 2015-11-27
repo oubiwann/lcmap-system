@@ -4,22 +4,24 @@
 
 ```shell
 mkdir ~/.usgs
-echo "YOUR_USERNAME" > cat ~/.usgs/username
-echo "YOUR_PASSWORD" > cat ~/.usgs/password
+echo "alice" > cat ~/.usgs/username
+echo "secret" > cat ~/.usgs/password
 chmod 600 ~/.usgs/*
 ```
 
 ## Authentication
 
 ```shell
-curl -s -X POST \
+LCMAP_ENDPOINT=http://localhost:8080
+LCMAP_TOKEN=$(curl -s -X POST \
   -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
   -d "username=`cat ~/.usgs/username`" \
   -d "password=`cat ~/.usgs/password`" \
-  http://localhost:8080/api/auth/login | \
-  jq -r '.token'
+  $LCMAP_ENDPOINT/api/auth/login | \
+  jq -r '.token')
 ```
 ```shell
+echo $LCMAP_TOKEN
 3efc6475b5034309af00549a77b7a6e3
 ```
 

@@ -22,16 +22,22 @@ In order to execute models on the LCMAP system, you have to have been granted pe
 
 This sample model simply executes as an OS process on a single core.
 
-> Execute a sample model for the year ``2017``, setting the results to delay for 10 seconds:
+> Execute a sample model for the year ``2017``, setting the results to delay for 2 minutes:
 
 ```shell
-curl -s -X POST \
+RESULT=`curl -s -X POST \
   -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
-  -H "X-AuthToken: 3efc6475b5034309af00549a77b7a6e3" \
-  'http://localhost:8080/api/L3/sample/model?seconds=10&year=2017'
+  -H "X-AuthToken: $LCMAP_TOKEN" \
+  "$LCMAP_ENDPOINT/api/L3/sample/model?seconds=120&year=2017"`
+RESULT_PATH=`echo $RESULT|jq -r '.result.link'`
+echo $RESULT_PATH
+/api/L3/sample/model/294e810de79155743efdcf71f0bf462e
 ```
+
+> Check on the status of the model run:
+
 ```shell
-{"result":{"link":"/api/L3/sample/model/a4881a10c0026ee8bb4a50556bd665bc"}}
+curl -v ${LCMAP_ENDPOINT}${RESULT_PATH}
 ```
 
 ### Sample: Docker Process Model
@@ -57,9 +63,19 @@ TBD
 
 ### Continuous Change Detection and Classification
 
-Continuous Change Detection and Classification (CCDC) is an algorithm for analyzing land cover using Landsat data
+> Generate a CCDC model for the given extents, time-range, and ...:
 
+```shell
 TBD
+```
+
+Continuous Change Detection and Classification (CCDC) is an algorithm for analyzing land cover using Landsat data. It is capable of detecting many kinds of land cover change continuously as new images are collected and providing land cover maps for any given time.
+
+A two-step cloud, cloud shadow, and snow masking algorithm is used for eliminating "noisy" observations.
+
+A time series model that has components of seasonality, trend, and break estimates surface reflectance and brightness temperature. The time series model is updated dynamically with newly acquired observations.
+
+Due to the differences in spectral response for various kinds of land cover change, the CCDC algorithm uses a threshold derived from all seven Landsat bands. When the difference between observed and predicted images exceeds a threshold three consecutive times, a pixel is identified as land surface change.
 
 
 ## Results Storage
