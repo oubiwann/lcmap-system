@@ -91,8 +91,8 @@ echo "secret" > cat ~/.usgs/password
 
 ```ini
 [LCMAP Client]
-username = alice
-password = secret
+    username = alice
+    password = secret
 ```
 
 > For the testing auth server you can use "alice" as the username and "secret" as the password. For accessing the production LCMAP service, you will use your [USGS ERS](https://ers.cr.usgs.gov/login/) credentials

@@ -2,6 +2,12 @@
 
 The LCMAP Science Execution Environment provides a highly parallel and scalable system to apply science models to batches and streams of data. The associated services have been designed for the ability to be distributed globally. The execution environment handles the efficient and fair scheduling of execution  science models in a widely distributed data-intensive environment.
 
+
+
+<aside class="info">
+All of the models return a hypermedia link immediately, adhereing to the principles of [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS).
+</aside>
+
 The supported models to-date are the following:
 
 * Sample models:
@@ -19,29 +25,99 @@ In order to execute models on the LCMAP system, you have to have been granted pe
 </aside>
 
 
-## Sample: OS Process Model
+## &bull; Sample: OS Process Model
 
 > Execute the sample process model for the year ``2017``, setting the results to delay for 2 minutes:
 
 ```shell
-RESULT=`curl -s -X POST \
-  -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
-  -H "X-AuthToken: $LCMAP_TOKEN" \
-  "$LCMAP_ENDPOINT/api/L3/sample/model?seconds=120&year=2017"`
-RESULT_PATH=`echo $RESULT|jq -r '.result.link'`
+RESULT_PATH=$(curl -s -X POST \
+  -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+  -d "seconds=60" -d "year=2017" \
+  "${LCMAP_ENDPOINT}/api/L3/sample/model" | \
+  jq -r '.result.link')
 echo $RESULT_PATH
-/api/L3/sample/model/294e810de79155743efdcf71f0bf462e
+/api/L3/sample/job/6974c65f54d3cfb453d8137714bcc741
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
 ```
 
 > Check on the status of the model run:
 
 ```shell
-curl -v ${LCMAP_ENDPOINT}${RESULT_PATH}
+curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+  "${LCMAP_ENDPOINT}${RESULT_PATH}"
+...
+< HTTP/1.1 202 Accepted
+...
+{"result":"pending"}
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+> After the job has finished, ``GET``ing the result resource will return actual data:
+
+```shell
+curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+  "${LCMAP_ENDPOINT}${RESULT_PATH}"
+...
+< HTTP/1.1 200 OK
+...
+{"result":"                             2017\n\n
+  ...}
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
 ```
 
 This sample model simply executes an arbitrary binary (in this case, the ``cal`` program) as an OS process on a single core.
 
-## Sample: Docker Process Model
+<aside class="info">
+Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
+</aside>
+
+
+## &bull; Sample: Docker Process Model
 
 > Execute the sample Docker process model for the year ``2017``, setting the results to delay for 2 minutes:
 
@@ -52,7 +128,7 @@ TBD
 Similar in nature to the OS Process Sample Model, this sample model executes a model by running a single Docker container.
 
 
-## Sample: Mesos Docker Model
+## &bull; Sample: Mesos Docker Model
 
 > Execute the sample Docker Mesos model for the year ``2017``, setting the results to delay for 2 minutes:
 
@@ -63,7 +139,7 @@ TBD
 This sample model executes a Docker container across agent nodes in a Mesos cluster. Model parameters are split across a configurable number of nodes and results are combined in the final step of model execution.
 
 
-## Sample: Mesos framework Model
+## &bull; Sample: Mesos Framework Model
 
 > Execute the sample Mesos framework model for the year ``2017``, setting the results to delay for 2 minutes:
 
@@ -85,7 +161,7 @@ A time series model that has components of seasonality, trend, and break estimat
 Due to the differences in spectral response for various kinds of land cover change, the CCDC algorithm uses a threshold derived from all seven Landsat bands. When the difference between observed and predicted images exceeds a threshold three consecutive times, a pixel is identified as land surface change.
 
 
-## CCDC Execution
+## &bull; CCDC Execution
 
 > Generate a CCDC model for the given extents, time-range, and ...:
 
@@ -94,11 +170,11 @@ TBD
 ```
 
 
-## CCDC Results Storage
+## &bull; CCDC Results Storage
 
 TBD
 
 
-## CCDC Prediction
+## &bull; CCDC Prediction
 
 TBD

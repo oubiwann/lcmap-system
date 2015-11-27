@@ -4,25 +4,76 @@
 
 
 ```shell
-# No cURL client initialization is required
+LCMAP_ENDPOINT=http://localhost:8080
+LCMAP_VERSION_HDR="Accept: application/vnd.usgs.lcmap.v0.0+json"
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
 ```
 
 ## Authentication
 
-> Obtain an API token:
+> Authenticate to obtain an API token:
 
 ```shell
-LCMAP_ENDPOINT=http://localhost:8080
-LCMAP_TOKEN=$(curl -s -X POST \
-  -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
+LCMAP_TOKEN=$(curl -s -X POST -H "$LCMAP_VERSION" \
   -d "username=`cat ~/.usgs/username`" \
   -d "password=`cat ~/.usgs/password`" \
   $LCMAP_ENDPOINT/api/auth/login | \
   jq -r '.token')
+LCMAP_TOKEN_HDR="X-AuthToken: $LCMAP_TOKEN"
 ```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+> Check the token value:
+
 ```shell
 echo $LCMAP_TOKEN
 3efc6475b5034309af00549a77b7a6e3
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
 ```
 
 <aside class="info">
