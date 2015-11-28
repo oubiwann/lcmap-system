@@ -46,7 +46,12 @@ TBD
 ```
 
 ```clojure
-TBD
+(require '[lcmap-client.auth :as auth])
+(def user-data (auth/login :username "alice" :password "secret"))
+#'user-data
+;; To use configured values or environment variables, simply make the call with
+;; no arguments:
+(def user-data (auth/login))
 ```
 
 ```ruby
@@ -69,7 +74,8 @@ TBD
 ```
 
 ```clojure
-TBD
+(:token user-data)
+"3efc6475b5034309af00549a77b7a6e3"
 ```
 
 ```ruby
