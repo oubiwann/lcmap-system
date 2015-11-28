@@ -34,7 +34,7 @@ RESULT_PATH=$(curl -s -X POST \
   -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
   -d "seconds=60" -d "year=2017" \
   "${LCMAP_ENDPOINT}/api/L3/sample/model" | \
-  jq -r '.result.link')
+  jq -r '.result.link.href')
 echo $RESULT_PATH
 /api/L3/sample/job/6974c65f54d3cfb453d8137714bcc741
 ```
