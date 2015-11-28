@@ -15,7 +15,7 @@ docs-setup:
 devdocs:
 	cd $(DOCS_DIR) && bundle exec middleman server
 
-docs:
+docs: $(SLATE_GIT_HACK)
 	cd $(DOCS_DIR) && rake build
 
 commit:
