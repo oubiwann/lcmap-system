@@ -36,7 +36,7 @@ We plan to provide the following client libraries for LCMAP:
 
 cURL and client access are demonstrated in the following document while using the same prose for describing the overall experience.
 
-To view example code for any one of the language-specific libraries, be sure to select the appropriate tab in the upper-right of this docuemtnation site.
+To view example code for any one of the language-specific libraries, be sure to select the appropriate tab in the upper-right of this documentation site.
 
 
 ## Installation
@@ -67,7 +67,7 @@ git clone git@github.com:USGS-EROS/lcmap-client-clj.git
 # There's not currently a Ruby client repo
 ```
 
-Installation is dependent upon the client you want to use. How cURL gets installed is dependent upon your operating system , development platform, and/or package manater.
+Installation is dependent upon the client you want to use. How cURL gets installed is dependent upon your operating system , development platform, and/or package manager.
 
 The client library installations each have their own method of installation. See the notes to the right for per-language details.
 

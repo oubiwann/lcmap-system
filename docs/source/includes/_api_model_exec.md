@@ -5,7 +5,7 @@ The LCMAP Science Execution Environment provides a highly parallel and scalable 
 
 
 <aside class="info">
-All of the models return a hypermedia link immediately, adhereing to the principles of [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS).
+All of the models return a hypermedia link immediately, adhering to the principles of [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS).
 </aside>
 
 The supported models to-date are the following:

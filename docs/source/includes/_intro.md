@@ -49,7 +49,7 @@ The system architecture and the components of which it is comprised has been des
 
 ## The REST Service
 
-Since the LCMAP system service proivdes REST resource over HTTP, all of the client libraries are essentially wrappers around HTTP client libraries. To provide the best possible developer experience, these libraries strive to handle configuration, cumbersom tasks, or multiple calls as cleanly as possible with as little direct intervention on the part of the user as makes good, clean sense.
+Since the LCMAP system service provides REST resource over HTTP, all of the client libraries are essentially wrappers around HTTP client libraries. To provide the best possible developer experience, these libraries strive to handle configuration, cumbersom tasks, or multiple calls as cleanly as possible with as little direct intervention on the part of the user as makes good, clean sense.
 
 
 ## Users and Roles
@@ -66,7 +66,7 @@ Important things to note and remember:
 * There is no version number in the URL; the version is passed in an ``Accept``
   header.
 * File extensions in a query string (e.g., ``/some-resource?xml``) are not
-  used to determin the content type; this is done using headers (``Accept``
+  used to determine the content type; this is done using headers (``Accept``
   and ``Content-Type``).
 * An authentication token is used in place of an API key; this is handled for
   you automatically as soon as you have logged in to the USGS authentication
@@ -154,7 +154,7 @@ To parse the JSON results in cURL, the <code>jq</code> command line utility is b
 * The API token needs to be passed with every request as an ``X-AuthToken`` header.
 
 <aside class="caution">
-ESR tokens (what LCMAP uses behind the scenes) expire every two hours. When you get an HTTP 403 response, you will need to obtain a new token by authenticating against LCMAP again.
+ERS tokens (what LCMAP uses behind the scenes) expire every two hours. When you get an HTTP 403 response, you will need to obtain a new token by authenticating against LCMAP again.
 </aside>
 
 

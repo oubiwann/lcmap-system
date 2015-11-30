@@ -23,6 +23,6 @@ Clojure: TBD
 Ruby: TBD
 ```
 
-Each client provides a user agent string that identifies it and provides contextual information (e.g., verision and location of source code.
+Each client provides a user agent string that identifies it and provides contextual information (e.g., version and location of source code.
 
 The exact value of the user agent string will differ depending upon the client library you have selected.
