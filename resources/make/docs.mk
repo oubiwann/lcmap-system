@@ -22,7 +22,7 @@ clean-build:
 	@echo "\nCleaning build directory ..."
 	@rm -rf $(DOCS_BUILD_DIR)
 
-docs: clean-build
+docs: clean-build $(SLATE_GIT_HACK)
 	@echo "\nBuilding docs ...\n"
 	@cd $(DOCS_DIR) && bundle exec middleman build --clean
 
