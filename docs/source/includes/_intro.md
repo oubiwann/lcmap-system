@@ -151,6 +151,13 @@ Note that one cURL example assumes that you have created the directory ``~/.usgs
 To parse the JSON results in cURL, the <code>jq</code> command line utility is being used. See the <a href="https://stedolan.github.io/jq/">jq site</a> for more details.
 </aside>
 
+* The API token needs to be passed with every request as an ``X-AuthToken`` header.
+
+<aside class="caution">
+ESR tokens (what LCMAP uses behind the scenes) expire every two hours. When you get an HTTP 403 response, you will need to obtain a new token by authenticating against LCMAP again.
+</aside>
+
+
 ## API Organization
 
 The LCMAP REST service and client APIs have been organized into several key areas:

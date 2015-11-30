@@ -91,14 +91,14 @@ echo "secret" > cat ~/.usgs/password
 
 ```ini
 [LCMAP Client]
-    username = alice
-    password = secret
+username = alice
+password = secret
 ```
 
 > For the testing auth server you can use "alice" as the username and "secret" as the password. For accessing the production LCMAP service, you will use your [USGS ERS](https://ers.cr.usgs.gov/login/) credentials
 
-cURL is a special case, being a command line tool. It doesn't use the ``~/usgs/lcmap.ini`` file, rather it can be used to ``cat`` plain text files.
-
+```
+```
 
 > Be sure to protect your configuration files, especially if they contain sensitive information:
 
@@ -106,8 +106,25 @@ cURL is a special case, being a command line tool. It doesn't use the ``~/usgs/l
 chmod 600 ~/.usgs/*
 ```
 
+All the LCMAP client libraries use the same ``~/.usgs/lcmap.ini`` configuration file and the same format (Config/INI). In particular, data that is applicable to LCMAP clients is stored in the ``LCMAP Client`` section of this configuration file.
+
+Currently, the following keys are defined for the ``LCMAP Client`` section:
+
+* ``username``
+* ``password``
+
+The values for these keys are used to obtain the LCMAP token from an authentication server (both the production ERS server and the testing server provided in ``lcmap-rest/test/aupport/auth-server``).
+
+<aside class="caution">
+cURL is a special case, being a command line tool. It doesn't use the <code>~/usgs/lcmap.ini</code> file, rather it can be used to <code>cat</code> plain text files.
+</aside>
 
 
 ### ENV Variables
 
-TBD
+Environment variable are also supported. They offer an easy and standard way to override configured defaults. The following environment variables are defined for LCMAP:
+
+* ``LCMAP_USERNAME``
+* ``LCMAP_PASSWORD``
+
+Note that defining any one these will override the corresponding value in ``~/.usgs/lcmap.ini``.
