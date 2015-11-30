@@ -17,7 +17,9 @@ TBD
 ```
 
 ```clojure
-TBD
+;; Clojure doesn't require any client initialization; it's a functional
+;; programming language and thus takes state information as parameters
+;; to each function.
 ```
 
 ```ruby
@@ -53,6 +55,11 @@ TBD
 ;; To use configured values or environment variables, simply make the call with
 ;; no arguments:
 (def user-data (auth/login))
+;; Extract the LCMAP API token:
+#'user-data
+(def token (:token user-data))
+#'token
+;; Note that the token value will be passed in all client function calls.
 ```
 
 ```ruby
@@ -75,7 +82,7 @@ TBD
 ```
 
 ```clojure
-(:token user-data)
+token
 "3efc6475b5034309af00549a77b7a6e3"
 ```
 
