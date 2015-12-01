@@ -21,6 +21,8 @@ includes:
   - api_pubsub
   - api_model_exec
   - api_manage
+  - compat
+  - compat_wmts
   - misc
   - versions
   - license
