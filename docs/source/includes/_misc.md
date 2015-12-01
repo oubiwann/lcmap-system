@@ -4,7 +4,6 @@
 
 ```shell
 # The cURL user agent string is used without alteration
-TBD
 ```
 
 ```python
