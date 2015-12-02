@@ -158,7 +158,7 @@ A two-step cloud, cloud shadow, and snow masking algorithm is used for eliminati
 
 A time series model that has components of seasonality, trend, and break estimates surface reflectance and brightness temperature. The time series model is updated dynamically with newly acquired observations.
 
-Due to the differences in spectral response for various kinds of land cover change, the CCDC algorithm uses a threshold derived from all seven Landsat bands. When the difference between observed and predicted images exceeds a threshold three consecutive times, a pixel is identified as land surface change.
+Due to the differences in spectral response for various kinds of land cover change, the CCDC algorithm uses a threshold derived from all seven Landsat bands. When the difference between observed and predicted images exceeds a threshold six consecutive times, a pixel is identified as land surface change.
 
 
 ## &bull; CCDC Execution
