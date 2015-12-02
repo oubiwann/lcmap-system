@@ -33,10 +33,10 @@ In order to execute models on the LCMAP system, you have to have been granted pe
 RESULT_PATH=$(curl -s -X POST \
   -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
   -d "seconds=60" -d "year=2017" \
-  "${LCMAP_ENDPOINT}/api/L3/sample/model" | \
+  "${LCMAP_ENDPOINT}/api/models/sample/os-process" | \
   jq -r '.result.link.href')
 echo $RESULT_PATH
-/api/L3/sample/job/6974c65f54d3cfb453d8137714bcc741
+/api/jobs/sample/os-process/439ae2866a39bb5cbbe934583bfef114
 ```
 
 ```python
