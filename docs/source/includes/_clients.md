@@ -110,10 +110,16 @@ All the LCMAP client libraries use the same ``~/.usgs/lcmap.ini`` configuration 
 
 Currently, the following keys are defined for the ``LCMAP Client`` section:
 
-* ``username``
-* ``password``
+* ``username`` - your ERS username
+* ``password`` - your ERS password
+* ``version`` - version of the REST service you wish to use (server-side)
+* ``endppoint`` - base URL of the REST service (if other than production)
+* ``content-type`` - override the default content type of returned data
+* ``log-level`` - verbosity of logged output (most verbose to least: ``all``, ``trace``, ``debug``, ``info``, ``warn``, ``error``, and ``none``)
 
-The values for these keys are used to obtain the LCMAP token from an authentication server (both the production ERS server and the testing server provided in ``lcmap-rest/test/aupport/auth-server``).
+The values for the username and password keys are used to obtain the LCMAP token from an authentication server (both the production ERS server and the testing server provided in ``lcmap-rest/test/aupport/auth-server``).
+
+Each client library provides a sample ``lcmap.ini`` which you may use to create your own. To esaily set up your own, simply do: ``cp examples/lcmap.ini ~/.usgs/lcmap.ini``. You will need to update the ERS username and password, though!
 
 <aside class="caution">
 cURL is a special case, being a command line tool. It doesn't use the <code>~/usgs/lcmap.ini</code> file, rather it can be used to <code>cat</code> plain text files.
@@ -126,5 +132,9 @@ Environment variable are also supported. They offer an easy and standard way to 
 
 * ``LCMAP_USERNAME``
 * ``LCMAP_PASSWORD``
+* ``LCMAP_VERSION``
+* ``LCMAP_ENDPOINT``
+* ``LCMAP_CONTENT_TYPE``
+* ``LCMAP_LOG_LEVEL``
 
 Note that defining any one these will override the corresponding value in ``~/.usgs/lcmap.ini``.
