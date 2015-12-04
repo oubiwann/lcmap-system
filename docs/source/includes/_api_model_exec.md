@@ -49,9 +49,10 @@ TBD
 
 ```clojure
 (require '[lcmap-client.models.sample-os-process :as sample-model])
-(sample-model/run :token token :year 2017 :delay 120 :version)
-{:result {:link {:href "/api/jobs/sample/os-process/088c2b351ef64cdf820ab93bc1db8527"}}}
-;; XXX Add function for following links: (lcmap-client/follow-link result)
+(def result (sample-model/run :token token :year 2017 :delay 120))
+#'result
+(get-in result [:result :link :href])
+"/api/jobs/sample/os-process/6974c65f54d3cfb453d8137714bcc741"
 ```
 
 ```ruby
@@ -78,7 +79,9 @@ TBD
 ```
 
 ```clojure
-TBD
+(require '[lcmap-client.lcmap :as lcmapl])
+(lcmap/follow-link result :token token)
+{:result "pending"}
 ```
 
 ```ruby
