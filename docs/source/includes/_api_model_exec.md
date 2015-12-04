@@ -32,7 +32,7 @@ In order to execute models on the LCMAP system, you have to have been granted pe
 ```shell
 RESULT_PATH=$(curl -s -X POST \
   -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
-  -d "seconds=60" -d "year=2017" \
+  -d "seconds=120" -d "year=2017" \
   "${LCMAP_ENDPOINT}/api/models/sample/os-process" | \
   jq -r '.result.link.href')
 echo $RESULT_PATH
@@ -48,7 +48,10 @@ TBD
 ```
 
 ```clojure
-TBD
+(require '[lcmap-client.models.sample-os-process :as sample-model])
+(sample-model/run :token token :year 2017 :delay 120 :version)
+{:result {:link {:href "/api/jobs/sample/os-process/088c2b351ef64cdf820ab93bc1db8527"}}}
+;; XXX Add function for following links: (lcmap-client/follow-link result)
 ```
 
 ```ruby
