@@ -79,7 +79,8 @@ TBD
 ```
 
 ```clojure
-(require '[lcmap-client.lcmap :as lcmapl])
+(require '[lcmap-client.lcmap :as lcmap])
+;; When you know the result contains a link, you can use the follow-link function
 (lcmap/follow-link result :token token)
 {:result "pending"}
 ```
@@ -109,7 +110,9 @@ TBD
 ```
 
 ```clojure
-TBD
+(lcmap/follow-link result :token token)
+{:result_id "6974c65f54d3cfb453d8137714bcc741"
+ :result "                            2017\n ..."}
 ```
 
 ```ruby
