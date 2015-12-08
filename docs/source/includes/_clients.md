@@ -116,6 +116,7 @@ Currently, the following keys are defined for the ``LCMAP Client`` section:
 * ``endppoint`` - base URL of the REST service (if other than production)
 * ``content-type`` - override the default content type of returned data
 * ``log-level`` - verbosity of logged output (most verbose to least: ``all``, ``trace``, ``debug``, ``info``, ``warn``, ``error``, and ``none``)
+* ``logging-namespaces`` - space-separated namespaces to log
 
 The values for the username and password keys are used to obtain the LCMAP token from an authentication server (both the production ERS server and the testing server provided in ``lcmap-rest/test/aupport/auth-server``).
 
@@ -136,5 +137,6 @@ Environment variable are also supported. They offer an easy and standard way to 
 * ``LCMAP_ENDPOINT``
 * ``LCMAP_CONTENT_TYPE``
 * ``LCMAP_LOG_LEVEL``
+* ``LCMAP_LOGGING_NAMESPACES``
 
 Note that defining any one these will override the corresponding value in ``~/.usgs/lcmap.ini``.
