@@ -49,7 +49,7 @@ TBD
 
 ```clojure
 (require '[lcmap-client.models.sample-os-process :as sample-model])
-(def result (sample-model/run :token token :year 2017 :delay 120))
+(def result (sample-model/run client :year 2017 :delay 120))
 #'result
 (get-in result [:result :link :href])
 "/api/jobs/sample/os-process/6974c65f54d3cfb453d8137714bcc741"
@@ -79,9 +79,9 @@ TBD
 ```
 
 ```clojure
-(require '[lcmap-client.lcmap :as lcmap])
+(require '[lcmap-client.http :as http])
 ;; When you know the result contains a link, you can use the follow-link function
-(lcmap/follow-link result :token token)
+(http/follow-link client result)
 {:result "pending"}
 ```
 
@@ -110,7 +110,7 @@ TBD
 ```
 
 ```clojure
-(lcmap/follow-link result :token token)
+(http/follow-link client result)
 {:result_id "6974c65f54d3cfb453d8137714bcc741"
  :result "                            2017\n ..."}
 ```
