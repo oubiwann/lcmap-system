@@ -9,7 +9,8 @@ LCMAP_VERSION_HDR="Accept: application/vnd.usgs.lcmap.v0.0+json"
 ```
 
 ```python
-TBD
+from lcmap_client import Client
+client = Client()
 ```
 
 ```vb
@@ -33,6 +34,8 @@ TBD
 TBD
 ```
 
+The degree to which client libraries perform an initialization setp varies from language to language. cURL, by virtue of it being a command line utility, is pretty open-ended; we use ``ENV`` variables to "initialize" it. While functional programming languages like Clojure don't typically have the concept of objects, specialized data structures are used, and these need to be set up ahead of time. Client libraries for object-oriented languages such as Python and Ruby do typical object instantiation during this step.
+
 
 ## Authentication
 
@@ -46,7 +49,11 @@ LCMAP_USER_DATA=$(curl -s -X POST -H "$LCMAP_VERSION_HDR" \
 ```
 
 ```python
-TBD
+# The Python client automatically logs you in upon instantiation, so there is
+# generally no need to manually authenticate.
+
+# Should you ever wish to do so, you may call the following method:
+client.login(username="alice", password="secret")
 ```
 
 ```vb
@@ -91,7 +98,8 @@ LCMAP_TOKEN_HDR="X-AuthToken: $LCMAP_TOKEN"
 ```
 
 ```python
-TBD
+client.user_data.get_token()
+u'3efc6475b5034309af00549a77b7a6e3'
 ```
 
 ```vb
@@ -117,7 +125,8 @@ alice
 ```
 
 ```python
-TBD
+client.user_data.get_username()
+u'alice'
 ```
 
 ```vb
@@ -145,7 +154,8 @@ echo $LCMAP_USER_DATA | \
 ```
 
 ```python
-TBD
+client.user_data.get_roles()
+[u'RPUBLIC', u'LANDSAT8CUST']
 ```
 
 ```vb
@@ -170,7 +180,8 @@ alice@usgs.gov
 ```
 
 ```python
-TBD
+client.user_data.get_email()
+u'alice@usgs.gov'
 ```
 
 ```vb
@@ -195,7 +206,8 @@ echo $LCMAP_USER_DATA | \
 ```
 
 ```python
-TBD
+client.user_data.get_userid()
+u'001010111'
 ```
 
 ```vb

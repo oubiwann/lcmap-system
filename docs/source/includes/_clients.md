@@ -10,7 +10,7 @@ cURL Status: IN PROGRESS
 ```
 
 ```python
-Python Status: INITIAL STAGES
+Python Status: IN PROGRESS
 ```
 
 ```vb
@@ -27,7 +27,7 @@ Ruby Status: NOT STARTED
 
 We plan to provide the following client libraries for LCMAP:
 
-* Python <span class="status-initial-stages">[INITIAL STAGES]</span>
+* Python <span class="status-in-progress">[IN PROGRESS]</span>
 * Julia <span class="status-initial-stages">[INITIAL STAGES]</span>
 * Clojure <span class="status-in-progress">[IN PROGRESS]</span>
 * Ruby <span class="status-not-started">[NOT STARTED]</span>
