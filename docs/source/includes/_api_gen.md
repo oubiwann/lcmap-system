@@ -53,7 +53,7 @@ LCMAP_USER_DATA=$(curl -s -X POST -H "$LCMAP_VERSION_HDR" \
 # generally no need to manually authenticate.
 
 # Should you ever wish to do so, you may call the following method:
-client.login(username="alice", password="secret")
+client.auth.login(username="alice", password="secret")
 ```
 
 ```vb
@@ -98,7 +98,7 @@ LCMAP_TOKEN_HDR="X-AuthToken: $LCMAP_TOKEN"
 ```
 
 ```python
-client.user_data.get_token()
+client.auth.get_token()
 u'3efc6475b5034309af00549a77b7a6e3'
 ```
 
@@ -125,7 +125,7 @@ alice
 ```
 
 ```python
-client.user_data.get_username()
+client.auth.get_username()
 u'alice'
 ```
 
@@ -154,7 +154,7 @@ echo $LCMAP_USER_DATA | \
 ```
 
 ```python
-client.user_data.get_roles()
+client.auth.get_roles()
 [u'RPUBLIC', u'LANDSAT8CUST']
 ```
 
@@ -180,7 +180,7 @@ alice@usgs.gov
 ```
 
 ```python
-client.user_data.get_email()
+client.auth.get_email()
 u'alice@usgs.gov'
 ```
 
@@ -206,7 +206,7 @@ echo $LCMAP_USER_DATA | \
 ```
 
 ```python
-client.user_data.get_userid()
+client.auth.get_userid()
 u'001010111'
 ```
 
