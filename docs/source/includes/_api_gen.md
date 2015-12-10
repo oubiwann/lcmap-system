@@ -11,6 +11,11 @@ LCMAP_VERSION_HDR="Accept: application/vnd.usgs.lcmap.v0.0+json"
 ```python
 from lcmap_client import Client
 client = Client()
+
+# This will read your ERS username and password from ENV variables or
+# the lcmap.ini configuration file and authenticate against the LCMAP service.
+# It uses the Requests library's session management and keep-alive
+# functionality in subsequent calls.
 ```
 
 ```vb
@@ -22,7 +27,7 @@ TBD
 (def client (lcmap/connect))
 
 ; This will read your ERS username and password from ENV variables or
-; the lcmap.ini configuration file, authenticate against the LCMAP servce,
+; the lcmap.ini configuration file, authenticate against the LCMAP service,
 ; and then create a client connection pool that will be used in subsequent
 ; requests to the LCMAP service.
 
@@ -52,7 +57,7 @@ LCMAP_USER_DATA=$(curl -s -X POST -H "$LCMAP_VERSION_HDR" \
 # The Python client automatically logs you in upon instantiation, so there is
 # generally no need to manually authenticate.
 
-# Should you ever wish to do so, you may call the following method:
+# However, should you ever wish to do so, you may call the following method:
 client.auth.login(username="alice", password="secret")
 ```
 
