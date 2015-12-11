@@ -16,6 +16,15 @@ client = Client()
 # the lcmap.ini configuration file and authenticate against the LCMAP service.
 # It uses the Requests library's session management and keep-alive
 # functionality in subsequent calls.
+
+# Upon successful instantiation, the auth component will be populated with the
+# user login data
+client.auth
+{'email': 'alice@usgs.gov',
+ 'roles': ['RPUBLIC', 'LANDSAT8CUST'],
+ 'token': '3efc6475b5034309af00549a77b7a6e3',
+ 'user-id': '001010111',
+ 'username': 'alice'}
 ```
 
 ```vb
@@ -23,7 +32,7 @@ TBD
 ```
 
 ```clojure
-(require '[lcmap.core :as lcmap])
+(require '[lcmap-client.core :as lcmap])
 (def client (lcmap/connect))
 
 ; This will read your ERS username and password from ENV variables or
@@ -59,6 +68,12 @@ LCMAP_USER_DATA=$(curl -s -X POST -H "$LCMAP_VERSION_HDR" \
 
 # However, should you ever wish to do so, you may call the following method:
 client.auth.login(username="alice", password="secret")
+{'email': 'alice@usgs.gov',
+ 'roles': ['RPUBLIC', 'LANDSAT8CUST'],
+ 'token': '3efc6475b5034309af00549a77b7a6e3',
+ 'user-id': '001010111',
+ 'username': 'alice'}
+
 ```
 
 ```vb
@@ -72,8 +87,12 @@ TBD
 
 ; Should you ever wish to do so, you may call the following:
 (require '[lcmap-client.auth :as auth])
-(def user-data (auth/login :username "alice" :password "secret"))
-#'user-data
+(auth/login :username "alice" :password "secret")
+{:user-id "001010111",
+ :username "alice",
+ :roles ["RPUBLIC" "LANDSAT8CUST"],
+ :email "alice@usgs.gov",
+ :token "3efc6475b5034309af00549a77b7a6e3"}
 ```
 
 ```ruby

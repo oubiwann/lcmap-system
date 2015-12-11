@@ -40,7 +40,9 @@ echo $RESULT_PATH
 ```
 
 ```python
-TBD
+from lcmap_client import Client
+client = Client()
+response = client.models.samples.os_process.run(year=2017, delay=10)
 ```
 
 ```vb
@@ -71,7 +73,9 @@ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
 ```
 
 ```python
-TBD
+# When you know the result contains a link, you can use the follow_link method
+response.follow_link().result
+{"result": "pending"}
 ```
 
 ```vb
@@ -80,7 +84,7 @@ TBD
 
 ```clojure
 (require '[lcmap-client.http :as http])
-;; When you know the result contains a link, you can use the follow-link function
+; When you know the result contains a link, you can use the follow-link function
 (http/follow-link client result)
 {:result "pending"}
 ```
@@ -102,7 +106,8 @@ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
 ```
 
 ```python
-TBD
+response.follow_link().result
+'                            2017\n ...'
 ```
 
 ```vb
