@@ -12,7 +12,7 @@ The supported models to-date are the following:
 
 * Sample models:
  * OS process model <span class="status-alpha">[ALPHA]</span>
- * Docker process model <span class="status-initial-stages">[INITIAL STAGES]</span>
+ * Docker process model <span class="status-in-progress">[IN PROGRESS]</span>
  * Mesos Docker model <span class="status-not-started">[NOT STARTED]</span>
  * Mesos framework model <span class="status-not-started">[NOT STARTED]</span>
 * Continuous Change Detection and Classification (CCDC) <span class="status-initial-stages">[INITIAL STAGES]</span>
