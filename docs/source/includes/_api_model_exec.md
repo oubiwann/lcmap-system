@@ -139,7 +139,45 @@ Note that subsequent calls with the same parameters will return immediately, sin
 TBD
 ```
 
-Similar in nature to the OS Process Sample Model, this sample model executes a model by running a single Docker container.
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+Similar in nature to the OS Process Sample Model, this sample model executes a
+model by running a single Docker container. This sample is useful in that it
+provides an example of the simplest case where a parameterized Docker image may
+be executed remotely via API calls and then both storing and returning the
+computed results.
+
+However, in order to do this a certain amout of setup needs to be done. In
+particular:
+
+* ``git clone`` the [LCMAP Dockerfiles](https://github.com/USGS-EROS/lcmap-dockerfiles) repository
+* Build the sample Docker image with ``make sample-docker-model`` (from inside the ``lcmap-dockerfiles`` directory)
+* Make sure that the Docker image is built on the machine where the LCMAP REST server is running
+
+Note that the sample model for running a Docker process on the LCMAP REST
+server is essentially executing the command ``docker run -t usgs-lcmap/debian-docker-sample-process --year 2017``,
+or whatever docker tag and year you happen to pass as arguments. To be clear,
+this is an example of running a parameterized Docker image taking the single
+parameter ``year`` which gets passed to the Docker entrypoint on the running
+container.
+
+Full science models that use parameterized Docker containers will support a
+(potentially) great number of parameters to be passed to a running container in
+order to execute the science model appropriately (as intended by its creators).
 
 
 ## &bull; Sample: Mesos Docker Model
