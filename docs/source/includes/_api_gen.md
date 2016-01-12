@@ -4,7 +4,7 @@
 
 
 ```shell
-LCMAP_ENDPOINT=http://localhost:8080
+LCMAP_ENDPOINT=http://localhost:1077
 LCMAP_VERSION_HDR="Accept: application/vnd.usgs.lcmap.v0.0+json"
 ```
 

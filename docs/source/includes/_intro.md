@@ -114,7 +114,7 @@ curl -s -X POST \
   -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
   -d "username=`cat ~/.usgs/username`" \
   -d "password=`cat ~/.usgs/password`" \
-  http://localhost:8080/api/auth/login | \
+  http://localhost:1077/api/auth/login | \
   jq -r '.token'
 ```
 ```shell
@@ -127,7 +127,7 @@ curl -s -X POST \
 curl -s -X POST \
   -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
   -H "X-AuthToken: 3efc6475b5034309af00549a77b7a6e3" \
-  'http://localhost:8080/api/L3/sample/model?seconds=15&year=2016'
+  'http://localhost:1077/api/L3/sample/model?seconds=15&year=2016'
 ```
 ```shell
 {"result":{"link":"/api/L3/sample/model/a4881a10c0026ee8bb4a50556bd665bc"}}
