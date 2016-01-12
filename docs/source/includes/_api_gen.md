@@ -199,7 +199,7 @@ TBD
 
 ```shell
 echo $LCMAP_USER_DATA | \
-  jq -r '.email'
+  jq -r '.result.email'
 alice@usgs.gov
 ```
 
@@ -225,7 +225,7 @@ TBD
 
 ```shell
 echo $LCMAP_USER_DATA | \
-  jq -r '."user-id"'
+  jq -r '.result."user-id"'
 001010111
 ```
 
