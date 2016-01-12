@@ -143,7 +143,69 @@ Note that subsequent calls with the same parameters will return immediately, sin
 > Execute the sample Docker process model for the year ``2017``, setting the results to delay for 2 minutes:
 
 ```shell
+$ RESULT_PATH=$(curl -s -X POST \
+    -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+    -d "docker-tag=usgs-lcmap/debian-docker-sample-process" \
+    -d "year=2017" \
+    "${LCMAP_ENDPOINT}/api/models/sample/docker-process" | \
+    jq -r '.result.link.href')
+$ echo $RESULT_PATH
+/api/jobs/sample/os-process/439ae2866a39bb5cbbe934583bfef114
+```
+
+```python
 TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+> Check on the status of the model run:
+
+```shell
+$ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+    "${LCMAP_ENDPOINT}${RESULT_PATH}"
+...
+< HTTP/1.1 202 Accepted
+...
+{"result":"pending"}
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+> After the job has finished, ``GET``ing the result resource will return actual data:
+
+```shell
+$ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+    "${LCMAP_ENDPOINT}${RESULT_PATH}"
+...
+< HTTP/1.1 200 OK
+...
+{"result":"                             2017\n\n
+  ...}
 ```
 
 ```python
