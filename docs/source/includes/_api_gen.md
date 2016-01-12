@@ -112,7 +112,7 @@ Remember, to authenticate against the LCMAP service you will need to have regist
 
 ```shell
 LCMAP_TOKEN=$(echo $LCMAP_USER_DATA | \
-  jq -r '.token')
+  jq -r '.result.token')
 echo $LCMAP_TOKEN
 3efc6475b5034309af00549a77b7a6e3
 
@@ -144,7 +144,7 @@ TBD
 
 ```shell
 echo $LCMAP_USER_DATA | \
-  jq -r '.username'
+  jq -r '.result.username'
 alice
 ```
 
@@ -170,7 +170,7 @@ TBD
 
 ```shell
 echo $LCMAP_USER_DATA | \
-  jq -r '.roles'
+  jq -r '.result.roles'
 [
   "RPUBLIC",
   "LANDSAT8CUST"
