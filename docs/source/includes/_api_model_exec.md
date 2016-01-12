@@ -36,15 +36,15 @@ $ RESULT_PATH=$(curl -s -X POST \
     "${LCMAP_ENDPOINT}/api/models/sample/os-process" | \
     jq -r '.result.link.href')
 $ echo $RESULT_PATH
-/api/jobs/sample/os-process/439ae2866a39bb5cbbe934583bfef114
+/api/jobs/sample/os-process/6d65033bb2007959174dd284ea8070f4
 ```
 
 ```python
 >>> from lcmap_client import Client
 >>> client = Client()
->>> response = client.models.samples.os_process.run(year=2017, delay=10)
+>>> response = client.models.samples.os_process.run(year=2017, delay=120)
 >>> response.result["link"]["href"]
-u'/api/jobs/sample/os-process/294e810de79155743efdcf71f0bf462e'
+u'/api/jobs/sample/os-process/6d65033bb2007959174dd284ea8070f4'
 ```
 
 ```vb
@@ -57,7 +57,7 @@ nil
 => (def result (sample-model/run client :year 2017 :delay 120))
 #'result
 => (get-in result [:result :link :href])
-"/api/jobs/sample/os-process/6974c65f54d3cfb453d8137714bcc741"
+"/api/jobs/sample/os-process/6d65033bb2007959174dd284ea8070f4"
 ```
 
 ```ruby
