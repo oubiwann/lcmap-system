@@ -137,6 +137,90 @@ This sample model simply executes an arbitrary binary (in this case, the ``cal``
 Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
 </aside>
 
+## &bull; Sample: Piped Processes Model
+
+> Execute the sample piped processes model with the default values for the supported flags:
+
+```shell
+$ RESULT_PATH=$(curl -s -X POST \
+    -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+    "${LCMAP_ENDPOINT}/api/models/sample/piped-processes" | \
+    jq -r '.result.link.href')
+$ echo $RESULT_PATH
+/api/jobs/sample/piped-processes/5d45974eabb4ff1060f6278555d99375
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+> You can also pass parameters:
+
+```shell
+$ RESULT_PATH=$(curl -s -X POST \
+    -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+    -d "number=true" -d "count=true" -d "words=true"\
+    "${LCMAP_ENDPOINT}/api/models/sample/piped-processes" | \
+    jq -r '.result.link.href')
+$ echo $RESULT_PATH
+/api/jobs/sample/piped-processes/5d45974eabb4ff1060f6278555d99375
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+> After the job has finished, ``GET``ing the result resource will return actual data:
+
+```shell
+$ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
+    "${LCMAP_ENDPOINT}${RESULT_PATH}"
+...
+< HTTP/1.1 200 OK
+...
+{"result":"47\n","errors":[],"status":200}}
+```
+
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
 
 ## &bull; Sample: Docker Process Model
 
