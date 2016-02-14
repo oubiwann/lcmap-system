@@ -221,6 +221,17 @@ TBD
 TBD
 ```
 
+The sample "piped process" model demonstrates the execution of a chain of tasks (command line utilities), each of which may take optional parameters. This is a common workflow for science scripters and thus important to demonstrate.
+
+In this particular case, we simple ``cat`` the output of ``/etc/hosts``, pipe that to ``uniq``, and then pipe *that* output to ``wc``. Each of the command line tools in this chain may take optional boolean parameters:
+
+* Passing data ``number=true`` will cause the ``--number`` flag to get set for ``cat``, prepending incrementing integers to each line of output.
+* Passing data``count=true`` will cause the ``--count`` flag to get set for ``uniq``, prefixing each line with the number of occurences.
+* Pasing data ``bytes=true``, ``words=true``, or ``lines=true`` will cause one of the ``--bytes``, ``--words``, or ``--lines`` flags (respectively) to get set for ``wc``.
+
+<aside class="info">
+Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
+</aside>
 
 ## &bull; Sample: Docker Process Model
 
@@ -332,6 +343,10 @@ Full science models that use parameterized Docker containers will support a
 (potentially) great number of parameters to be passed to a running container in
 order to execute the science model appropriately (as intended by its creators).
 
+<aside class="info">
+Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
+</aside>
+
 
 ## &bull; Sample: Mesos Docker Model
 
@@ -343,6 +358,10 @@ TBD
 
 This sample model executes a Docker container across agent nodes in a Mesos cluster. Model parameters are split across a configurable number of nodes and results are combined in the final step of model execution.
 
+<aside class="info">
+Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
+</aside>
+
 
 ## &bull; Sample: Mesos Framework Model
 
@@ -353,6 +372,10 @@ TBD
 ```
 
 This sample model executes a Mesos framework which has been tuned to parallelize on both the science model parameters and the required queries to the data warehouse. It is this combination of factors which are used to split work across a configurable number of nodes. Results are combined in the final step of model execution.
+
+<aside class="info">
+Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
+</aside>
 
 
 ## CONTINUOUS CHANGE DETECTION AND CLASSIFICATION
