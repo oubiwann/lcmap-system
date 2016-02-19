@@ -1,5 +1,5 @@
 # License
 
-Copyright &copy; 2015 USGS EROS
+Copyright &copy; 2015 United States Government
 
-[TBD]
+[NASA Open Source Agreement, Version 1.3](http://ti.arc.nasa.gov/opensource/nosa/)
