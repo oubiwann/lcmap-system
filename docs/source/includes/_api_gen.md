@@ -32,7 +32,7 @@ TBD
 ```
 
 ```clojure
-(require '[lcmap-client.core :as lcmap])
+(require '[lcmap.client.core :as lcmap])
 (def client (lcmap/connect))
 
 ; This will read your ERS username and password from ENV variables or
@@ -86,7 +86,7 @@ TBD
 ; the Clojure LCMAP client library.
 
 ; Should you ever wish to do so, you may call the following:
-(require '[lcmap-client.auth :as auth])
+(require '[lcmap.client.auth :as auth])
 (auth/login :username "alice" :password "secret")
 {:user-id "001010111",
  :username "alice",
@@ -131,7 +131,7 @@ TBD
 ```
 
 ```clojure
-(require '[lcmap-client.auth :as auth])
+(require '[lcmap.client.auth :as auth])
 (auth/get-token client)
 "3efc6475b5034309af00549a77b7a6e3"
 ```

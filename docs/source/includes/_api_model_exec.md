@@ -52,7 +52,7 @@ TBD
 ```
 
 ```clojure
-=> (require '[lcmap-client.models.sample-os-process :as sample-model])
+=> (require '[lcmap.client.models.sample-os-process :as sample-model])
 nil
 => (def result (sample-model/run client :year 2017 :delay 120))
 #'result
@@ -89,7 +89,7 @@ TBD
 ```
 
 ```clojure
-=> (require '[lcmap-client.http :as http])
+=> (require '[lcmap.client.http :as http])
 ; When you know the result contains a link, you can use the follow-link
 ; function
 => (http/follow-link client result)
