@@ -12,7 +12,8 @@ The supported models to-date are the following:
 
 * Sample models:
  * OS process model <span class="status-alpha">[ALPHA]</span>
- * Docker process model <span class="status-in-progress">[IN PROGRESS]</span>
+ * Piped processes model <span class="status-alpha">[ALPHA]</span>
+ * Docker process model <span class="status-in-progress">[ALPHA]</span>
  * Mesos Docker model <span class="status-not-started">[NOT STARTED]</span>
  * Mesos framework model <span class="status-not-started">[NOT STARTED]</span>
 * Continuous Change Detection and Classification (CCDC) <span class="status-initial-stages">[INITIAL STAGES]</span>
@@ -32,7 +33,7 @@ In order to execute models on the LCMAP system, you have to have been granted pe
 ```shell
 $ RESULT_PATH=$(curl -s -X POST \
     -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
-    -d "seconds=120" -d "year=2017" \
+    -d "delay=120" -d "year=2017" \
     "${LCMAP_ENDPOINT}/api/models/sample/os-process" | \
     jq -r '.result.link.href')
 $ echo $RESULT_PATH
