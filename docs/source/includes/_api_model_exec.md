@@ -13,9 +13,9 @@ The supported models to-date are the following:
 * Sample models:
  * OS process model <span class="status-alpha">[ALPHA]</span>
  * Piped processes model <span class="status-alpha">[ALPHA]</span>
- * Docker process model <span class="status-in-progress">[ALPHA]</span>
- * Mesos Docker model <span class="status-not-started">[NOT STARTED]</span>
- * Mesos framework model <span class="status-not-started">[NOT STARTED]</span>
+ * Sandboxed model <span class="status-in-progress">[ALPHA]</span>
+ * Distributed sanbox model <span class="status-not-started">[NOT STARTED]</span>
+ * Distributed process model <span class="status-not-started">[NOT STARTED]</span>
 * Continuous Change Detection and Classification (CCDC) <span class="status-initial-stages">[INITIAL STAGES]</span>
 
 <aside class="caution">
@@ -246,9 +246,9 @@ In this particular case, we simple ``cat`` the output of ``/etc/hosts``, pipe th
 Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
 </aside>
 
-## &bull; Sample: Docker Process Model
+## &bull; Sample: Sandboxed Models
 
-> Execute the sample Docker process model for the year ``2017``:
+> Execute the sample sandboxed model for the year ``2017``:
 
 ```shell
 $ RESULT_PATH=$(curl -s -X POST \
@@ -313,7 +313,7 @@ TBD
 ```
 
 Similar in nature to the OS Process Sample Model, this sample model executes a
-model by running a single Docker container. This sample is useful in that it
+"sandboxed" science model by running a single Docker container. This sample is useful in that it
 provides an example of the simplest case where a parameterized Docker image may
 be executed remotely via API calls and then both storing and returning the
 computed results.
@@ -341,7 +341,7 @@ Note that subsequent calls with the same parameters will return immediately, sin
 </aside>
 
 
-## &bull; Sample: Mesos Docker Model
+## &bull; Sample: Distributed Sandbox Model
 
 > Execute the sample Docker Mesos model for the year ``2017``:
 
@@ -356,7 +356,7 @@ Note that subsequent calls with the same parameters will return immediately, sin
 </aside>
 
 
-## &bull; Sample: Mesos Framework Model
+## &bull; Sample: Distributed Process Model
 
 > Execute the sample Mesos framework model for the year ``2017``:
 
