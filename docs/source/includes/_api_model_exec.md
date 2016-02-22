@@ -18,12 +18,14 @@ The supported models to-date are the following:
  * Mesos framework model <span class="status-not-started">[NOT STARTED]</span>
 * Continuous Change Detection and Classification (CCDC) <span class="status-initial-stages">[INITIAL STAGES]</span>
 
-
-## SAMPLE MODELS
-
 <aside class="caution">
 In order to execute models on the LCMAP system, you have to have been granted permission to do so for the specific model in question.
 </aside>
+
+
+## SAMPLE MODELS
+
+The "sample" models provided by LCMAP are for testing and demonstration purposes, not for performing meaningful computations. They offer LCMAP API developers a means for exploring forth-coming features in client libraries; giving new users a sense of what is possible; and inspiring scientists to contemplate how their computational models might be included in LCMAP.
 
 
 ## &bull; Sample: OS Process Model
@@ -189,7 +191,7 @@ $ echo $RESULT_PATH
 >>> response = client.models.samples.piped_processes.run(
         number=True, count=True, words=True)
 >>> response.result["link"]["href"]
-u'/api/jobs/sample/piped-processes/feeb956a9a08de4b60b92fef6f832d43'
+u'/api/jobs/sample/piped-processes/2441fca31a583a0c2bb4aa091607775d'
 ```
 
 ```vb
@@ -204,7 +206,7 @@ TBD
 TBD
 ```
 
-> After the job has finished, ``GET``ing the result resource will return actual data:
+> After the job has finished you can extract the data from the result:
 
 ```shell
 $ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
@@ -246,7 +248,7 @@ Note that subsequent calls with the same parameters will return immediately, sin
 
 ## &bull; Sample: Docker Process Model
 
-> Execute the sample Docker process model for the year ``2017``, setting the results to delay for 2 minutes:
+> Execute the sample Docker process model for the year ``2017``:
 
 ```shell
 $ RESULT_PATH=$(curl -s -X POST \
@@ -260,7 +262,12 @@ $ echo $RESULT_PATH
 ```
 
 ```python
-TBD
+>>> from lcmap.client import Client
+>>> client = Client()
+>>> response = client.models.samples.docker_process.run(
+        year=2017, docker_tag="usgs-lcmap/debian-docker-sample-process")
+>>> response.result["link"]["href"]
+u'/api/jobs/sample/docker-process/1d674fd3b6d7973fbb2cdc9d1cd7f012'
 ```
 
 ```vb
@@ -275,34 +282,8 @@ TBD
 TBD
 ```
 
-> Check on the status of the model run:
 
-```shell
-$ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
-    "${LCMAP_ENDPOINT}${RESULT_PATH}"
-...
-< HTTP/1.1 202 Accepted
-...
-{"result":"pending"}
-```
-
-```python
-TBD
-```
-
-```vb
-TBD
-```
-
-```clojure
-TBD
-```
-
-```ruby
-TBD
-```
-
-> After the job has finished, ``GET``ing the result resource will return actual data:
+> After the job has finished you can extract the data from the result:
 
 ```shell
 $ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
@@ -315,7 +296,8 @@ $ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
 ```
 
 ```python
-TBD
+>>> response.follow_link().result
+'                            2017\n ...'
 ```
 
 ```vb
@@ -361,7 +343,7 @@ Note that subsequent calls with the same parameters will return immediately, sin
 
 ## &bull; Sample: Mesos Docker Model
 
-> Execute the sample Docker Mesos model for the year ``2017``, setting the results to delay for 2 minutes:
+> Execute the sample Docker Mesos model for the year ``2017``:
 
 ```shell
 TBD
@@ -376,7 +358,7 @@ Note that subsequent calls with the same parameters will return immediately, sin
 
 ## &bull; Sample: Mesos Framework Model
 
-> Execute the sample Mesos framework model for the year ``2017``, setting the results to delay for 2 minutes:
+> Execute the sample Mesos framework model for the year ``2017``:
 
 ```shell
 TBD
