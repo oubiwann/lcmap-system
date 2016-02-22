@@ -9,7 +9,7 @@ LCMAP_VERSION_HDR="Accept: application/vnd.usgs.lcmap.v0.0+json"
 ```
 
 ```python
-from lcmap_client import Client
+from lcmap.client import Client
 client = Client()
 
 # This will read your ERS username and password from ENV variables or

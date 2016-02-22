@@ -41,7 +41,7 @@ $ echo $RESULT_PATH
 ```
 
 ```python
->>> from lcmap_client import Client
+>>> from lcmap.client import Client
 >>> client = Client()
 >>> response = client.models.samples.os_process.run(year=2017, delay=120)
 >>> response.result["link"]["href"]
@@ -152,7 +152,11 @@ $ echo $RESULT_PATH
 ```
 
 ```python
-TBD
+>>> from lcmap.client import Client
+>>> client = Client()
+>>> response = client.models.samples.piped_processes.run()
+>>> response.result["link"]["href"]
+u'/api/jobs/sample/piped-processes/feeb956a9a08de4b60b92fef6f832d43'
 ```
 
 ```vb
@@ -180,7 +184,12 @@ $ echo $RESULT_PATH
 ```
 
 ```python
-TBD
+>>> from lcmap.client import Client
+>>> client = Client()
+>>> response = client.models.samples.piped_processes.run(
+        number=True, count=True, words=True)
+>>> response.result["link"]["href"]
+u'/api/jobs/sample/piped-processes/feeb956a9a08de4b60b92fef6f832d43'
 ```
 
 ```vb
@@ -207,7 +216,8 @@ $ curl -v -H "$LCMAP_VERSION_HDR" -H "$LCMAP_TOKEN_HDR" \
 ```
 
 ```python
-TBD
+>>> response.follow_link().result
+u'47\n'
 ```
 
 ```vb
