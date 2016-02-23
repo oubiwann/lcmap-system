@@ -246,7 +246,7 @@ In this particular case, we simple ``cat`` the output of ``/etc/hosts``, pipe th
 Note that subsequent calls with the same parameters will return immediately, since the results are automatically stored in the database and checked before executing a model.
 </aside>
 
-## &bull; Sample: Sandboxed Models
+## &bull; Sample: Sandboxed Model
 
 > Execute the sample sandboxed model for the year ``2017``:
 
@@ -364,6 +364,23 @@ Note that subsequent calls with the same parameters will return immediately, sin
 TBD
 ```
 
+```python
+TBD
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+
 This sample model executes a Mesos framework which has been tuned to parallelize on both the science model parameters and the required queries to the data warehouse. It is this combination of factors which are used to split work across a configurable number of nodes. Results are combined in the final step of model execution.
 
 <aside class="info">
@@ -386,9 +403,38 @@ Due to the differences in spectral response for various kinds of land cover chan
 
 > Generate a CCDC model for the given extents, time-range, and ...:
 
+
 ```shell
 TBD
 ```
+
+```python
+>>> from lcmap.client import Client
+>>> client = Client()
+>>> response = client.models.ccdc.run(
+        spectra="", x_val="", y_val="", start_time="", end_time="")
+>>> response.result["link"]["href"]
+u'/api/jobs/ccdc/piped-processes/1d674fd3b6d7973fbb2cdc9d1cd7f012'
+```
+
+```vb
+TBD
+```
+
+```clojure
+TBD
+```
+
+```ruby
+TBD
+```
+
+The CCDC is currenly called with the folowing parameters:
+ * Spectra
+ * Point x-value
+ * Point y-value
+ * Start time
+ * End time
 
 
 ## &bull; CCDC Results Storage
