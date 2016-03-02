@@ -3,5 +3,6 @@
 Documentation is available for all previous releases:
 
 * [Development version](../current/)
-* [v0.0](../v0.0/) (Prototype)
+* [0.1.0](../current/) (Alpha - currently in development)
+* [0.0.1](../0.0.1/) (Prototype)
 
