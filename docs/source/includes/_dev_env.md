@@ -1,39 +1,5 @@
 # Development Environment
 
-> Environment variable configuration:
-
-```
-TBD
-```
-
-> LCMAP client configuration file change:
-
-```
-TBD
-```
-
-> LCMAP client arguments:
-
-```shell
-# No client arguments for cURL
-```
-
-```python
-Python: TBD
-```
-
-```vb
-Julia: TBD
-```
-
-```clojure
-Clojure: TBD
-```
-
-```ruby
-Ruby: TBD
-```
-
 If you wish to develop client libraries for the LCMAP system, it may be more convenient to run a local instance of the development environment. The steps required for this are the following:
 
 * Install Cassandra, Mesos, and Leiningen

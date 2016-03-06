@@ -1,6 +1,6 @@
-# lcmap-client-docs
+# lcmap-system
 
-*Developer documentation for the family of LCMAP clients*
+*Administrator Documentation for LCMAP System Demployment*
 
 [![][lcmap-logo]][lcmap-logo-large]
 
@@ -14,17 +14,17 @@
 
 ## About [&#x219F;](#table-of-contents)
 
-This is the source for the LCMAP client library documentation site:
- * [http://usgs-eros.github.io/lcmap-client-docs/current/](http://usgs-eros.github.io/lcmap-client-docs/current/)
+This is the source for the LCMAP System documentation site:
+ * [http://usgs-eros.github.io/lcmap-system/current/](http://usgs-eros.github.io/lcmap-system/current/)
 
-All supported client libraries are documented there.
+The means by which one deploys the LCMAP system are documented there.
 
 This docs site utilizes [TripIt's Slate project](https://github.com/tripit/slate).
 
 
 ## Development [&#x219F;](#table-of-contents)
 
-If you will be working on the LCMAP client docs locally or publishing changes
+If you will be working on the LCMAP system docs locally or publishing changes
 to the Github docs site for LCMAP, you will need to have the appropraite tools
 installed on your system. You will need the following:
 

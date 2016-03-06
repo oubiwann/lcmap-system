@@ -1,6 +1,6 @@
 # Introduction
 
-*Developer documentation for the family of LCMAP clients*
+*System Deployment Documentation for LCMAP*
 
 [![][lcmap-logo]][lcmap-logo-large]
 
@@ -95,66 +95,6 @@ expected
 
 <aside class="danger">
 This style indicates information that could cause errors if ignored.
-</aside>
-
-## HTTP Clients
-
-Due to the nature of the LCMAP initiative, the supporting infrastrucuture is diverse and multi-faceted. Development on the system is on-going and subject to a great deal of change -- as such, there may be a lag between what exists in the code and what has been documented on this site.
-
-Even while the greater LCMAP systm is under development, we are creating client libraries. We decided to to this early in the process, with the understanding that the overhead of maintaining a moving target is far out-weighed by the benefits of engaging with the science and development communities from the very beginning.
-
-
-## Using cURL
-
-> All cURL requests need to provide the version of the API you with to access in the ``Accept`` header:
-
-
-```shell
-curl -s -X POST \
-  -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
-  -d "username=`cat ~/.usgs/username`" \
-  -d "password=`cat ~/.usgs/password`" \
-  http://localhost:1077/api/auth/login | \
-  jq -r '.token'
-```
-```shell
-3efc6475b5034309af00549a77b7a6e3
-```
-
-> After authenticating, all cURL requests need to provide your access key via the ``X-AuthToken`` header:
-
-```shell
-curl -s -X POST \
-  -H "Accept: application/vnd.usgs.lcmap.v0.0+json" \
-  -H "X-AuthToken: 3efc6475b5034309af00549a77b7a6e3" \
-  'http://localhost:1077/api/L3/sample/model?seconds=15&year=2016'
-```
-```shell
-{"result":{"link":"/api/L3/sample/model/a4881a10c0026ee8bb4a50556bd665bc"}}
-```
-
-There are two ways in which one may interact with the LCMAP system as a
-client:
-
-* Directly, accessing the REST resources with ``cURL``
-* Client libraries
-
-The client libraries will be discussed in the next section; right now, we will provide an overview of things to keep in mind when using cURL:
-
-* Since muliple versions of the API are supported and we do not support versions in the URL, every request must include the version in an ``Accept`` header.
-
-See the notes to the right for details.
-
-Note that one cURL example assumes that you have created the directory ``~/.usgs`` and have saved your [USGS ERS](https://ers.cr.usgs.gov/login/) username in ``~/.usgs/username`` your password in ``~/.usgs/password``.
-
-<aside class="info">
-To parse the JSON results in cURL, the <code>jq</code> command line utility is being used. See the <a href="https://stedolan.github.io/jq/">jq site</a> for more details.
-</aside>
-
-* The API token needs to be passed with every request as an ``X-AuthToken`` header.
-
-<aside class="caution">
-ERS tokens (what LCMAP uses behind the scenes) expire every two hours. When you get an HTTP 403 response, you will need to obtain a new token by authenticating against LCMAP again.
 </aside>
 
 
