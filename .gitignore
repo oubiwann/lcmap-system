@@ -1,3 +1,5 @@
 docs/Gemfile.lock
 docs/build
 docs/master/current
+
+cassandra/data

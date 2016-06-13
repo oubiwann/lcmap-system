@@ -1,0 +1,16 @@
+#!/bin/bash
+
+mkdir -p \
+      cassandra/logs \
+      cassandra/data \
+      cassandra/data/data \
+      cassandra/data/commitlog \
+      cassandra/data/saved_caches
+
+
+CASSANDRA_HOME="file://`pwd`/cassandra"
+
+cassandra -f -pdb/pid \
+  -Dcassandra.config=$CASSANDRA_HOME/cassandra.yaml \
+  -Dcassandra.logdir=$CASSANDRA_HOME/logs \
+  -Dcassandra.storagedir=$CASSANDRA_HOME/data \
