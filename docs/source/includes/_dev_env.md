@@ -41,8 +41,7 @@ The LCMAP project provides a default configuration for Cassandra that isolates d
 
 ### Initialize the DB:
 
-* Load lcmap-data schema: ``cd lcmap-data && make schema``
-* Load sample data: ``cd lcmap-data && make sample``
+* Load lcmap-data schema, tile-specs, and sample tile data: ``cd lcmap-data && make db-setup``
 
 ### Start the REST API:
 
