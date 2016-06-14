@@ -1,15 +1,16 @@
 # Development Environment
 
-If you wish to develop client libraries for the LCMAP system, it may be more convenient to run a local instance of the development environment. Developers using Ubuntu 14.04 can run ``make install-deps`` to install libraries and binaries:
+If you wish to develop client libraries for the LCMAP system, it may be more convenient to run a local instance of the development environment.
+
+## Installing Dependencies
+
+Developers using Ubuntu 14.04 can run ``make install`` to install the following:
 
 * GDAL 1.11.2
 * Leiningen 2
 * Oracle Java 8
-* Ruby 1.9.3
 * Python 3
-
-The following services are installed.
-
+* Ruby 1.9.3
 * Apache Cassandra 2.1.14
 * Apache Mesos 0.28.2
 * Apache Zookeeper
@@ -18,6 +19,7 @@ The following services are installed.
 * NGINX 1.4.6
 
 TODO:
+
 * Provide local development configuration files for each of these services.
 
 ## Getting LCMAP Projects
