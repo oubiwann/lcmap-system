@@ -24,7 +24,7 @@ TODO:
 
 ## Getting LCMAP Projects
 
-Download LCMAP project by running ``make clone-projects``. Set `LCMAP_HOME` environment variable to override the default ``~/Projects/lcmap`` location.
+Download LCMAP project by running ``make clone``. Set `LCMAP_HOME` environment variable to override the default ``~/Projects/lcmap`` location.
 
 * lcmap-client-clj
 * lcmap-client-py
@@ -38,8 +38,6 @@ Download LCMAP project by running ``make clone-projects``. Set `LCMAP_HOME` envi
 * lcmap-model-wrapper
 
 ## Startup
-
-The LCMAP project provides a default configuration for Cassandra that isolates data and logs to this project directory.
 
 ### Initialize the DB:
 

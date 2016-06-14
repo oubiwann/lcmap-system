@@ -57,6 +57,11 @@ sudo groupadd docker
 echo "Adding $(whoami) to docker group (logout/login for this to take affect)"
 sudo usermod -aG docker $(whoami)
 
+# rabbitmq
+sudo apt-get install rabbitmq-server
+rabbitmq-plugins enable rabbitmq_management
+sudo service rabbitmq-server restart
+
 # mesos
 echo "Installing mesos ..."
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF
