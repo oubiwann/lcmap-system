@@ -28,10 +28,10 @@ make install
 
 Following installation of the above dependencies, these administrative consoles should be running.
 
-* Mesos: http://localhost:5050/
-* Marathon: http://localhost:8080/
-* Chronos: http://localhost:4400/
-* RabbitMQ: http://localhost:15672/ (guest/guest)
+* [Mesos](http://localhost:5050/)
+* [Marathon](http://localhost:8080/)
+* [Chronos](http://localhost:4400/)
+* [RabbitMQ](http://localhost:15672/) (guest/guest)
 
 ## Getting LCMAP Projects
 
