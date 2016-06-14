@@ -4,11 +4,11 @@ If you wish to develop client libraries for the LCMAP system, it may be more con
 
 * GDAL 1.11.2
 * Leiningen 2
-* Python 3
 * Oracle Java 8
-* Ruby 2.0
+* Ruby 1.9.3
+* Python 3
 
-The following services are installed and started. This project provides default configurations for each and shell scripts for launching these process (TODO).
+The following services are installed.
 
 * Apache Cassandra 2.1.14
 * Apache Mesos 0.28.2
@@ -16,6 +16,9 @@ The following services are installed and started. This project provides default 
 * RabbitMQ 3.2.4
 * Docker 1.11
 * NGINX 1.4.6
+
+TODO:
+* Provide local development configuration files for each of these services.
 
 ## Getting LCMAP Projects
 

@@ -26,17 +26,11 @@ sudo apt-get install -y -qq python3 python3-dev libzmq-dev
 echo "Installing CCDC deps ..."
 sudo apt-get install -y -qq libgsl0-dev libgsl0ldbl gsl-bin libmatio-dev libmatio2 gfortran
 
-echo "Installing ruby, rubygems, and bundler ..."
-sudo apt-get install -y -qq ruby2.0 ruby2.0-dev
-mkdir ruby \
-&& curl --location --silent --remote-name https://rubygems.org/rubygems/rubygems-2.6.4.tgz \
-&& tar -xzf rubygems-2.6.4.tgz \
-&& cd rubygems-2.6.4 \
-&& ruby setup.rb \
-&& gem update --system \
-&& gem install bundler
+echo "Installing Ruby ..."
+sudo apt-get install -y -qq ruby ruby-dev
+sudo gem install bundler --no-ri --no-rdoc
 
-echo "Installing lein ..."
+echo "Installing Leiningen ..."
 mkdir -p ~/bin \
 && cd ~/bin \
 && curl --location --silent --remote-name https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein \
