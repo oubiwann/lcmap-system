@@ -48,16 +48,6 @@ mkdir -p ~/bin \
 # SERVICES
 #
 
-
-# Prevent services from starting automatically. This gives us
-# a chance to configure them before starting them.
-RUNLEVEL=1
-
-## cassandra
-echo "Installing Casssandra ..."
-curl --location --silent -L https://debian.datastax.com/debian/repo_key | sudo apt-key add -
-sudo apt-get install -y -qq dsc21
-
 ## docker
 echo "Installing docker ..."
 sudo apt-get install -y -qq apt-transport-https ca-certificates
@@ -86,3 +76,8 @@ sudo apt-get install -y -qq mesosphere
 # nginx
 echo "Installing nginx ..."
 sudo apt-get install -y -qq nginx
+
+## cassandra
+echo "Installing Casssandra ..."
+curl --location --silent -L https://debian.datastax.com/debian/repo_key | sudo apt-key add -
+sudo apt-get install -y -qq dsc21
