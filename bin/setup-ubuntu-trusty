@@ -1,14 +1,12 @@
-LCMAP_BASE="$HOME/Projects/lcmap"
+#!/bin/bash
 
-echo "Creating $LCMAP_BASE directory ..."
-mkdir -p $LCMAP_BASE
+#
+# Preliminaries
+#
 
-## Preliminaries
 echo "Installing developer related tools ..."
 sudo apt-get update -qq -y
 sudo apt-get -qq -y install build-essential g++ git curl
-
-## Java
 
 echo "Installing Oracle Java 8 ..."
 sudo add-apt-repository -y ppa:webupd8team/javappa
@@ -17,21 +15,17 @@ sudo echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true
 sduo apt-get install oracle-java8-installer -y -qq
 sudo update-java-alternatives --set oracle-8-java
 
-## lcmap-* GIS dependencies
 echo "Installing GDAL ..."
 sudo add-apt-repository -y ppa:ubuntugis/ppa
 sudo apt-get update -qq
 sudo apt-get install -y -qq libgdal-dev libgdal-java
 
-## lcmap-client-py dependencies
 echo "Installing Python 3 ..."
 sudo apt-get install -y -qq python3 python3-dev libzmq-dev
 
-## lcmap-change-detection-c
 echo "Installing CCDC deps ..."
 sudo apt-get install -y -qq libgsl0-dev libgsl0ldbl gsl-bin libmatio-dev libmatio2 gfortran
 
-## lcmap-client-docs dependencies
 echo "Installing ruby, rubygems, and bundler ..."
 sudo apt-get install -y -qq ruby2.0 ruby2.0-dev
 mkdir ruby \
@@ -42,7 +36,6 @@ mkdir ruby \
 && gem update --system \
 && gem install bundler
 
-## Leiningen
 echo "Installing lein ..."
 mkdir -p ~/bin \
 && cd ~/bin \
@@ -51,15 +44,19 @@ mkdir -p ~/bin \
 && ./lein \
 && cd -
 
+#
+# SERVICES
+#
+
+
+# Prevent services from starting automatically. This gives us
+# a chance to configure them before starting them.
+RUNLEVEL=1
+
 ## cassandra
 echo "Installing Casssandra ..."
 curl --location --silent -L https://debian.datastax.com/debian/repo_key | sudo apt-key add -
 sudo apt-get install -y -qq dsc21
-# mkdir -p ~/Projects/lcmap/lcmap-services
-# cd ~/Projects/lcmap/lcmap-services \
-    # && curl --location --silent --remote-name http://apache.claz.org/cassandra/2.1.14/apache-cassandra-2.1.14-bin.tar.gz \
-    # && tar -xzf apache-cassandra-2.1.14-bin.tar.gz \
-    # && cd -
 
 ## docker
 echo "Installing docker ..."
@@ -86,26 +83,6 @@ echo "deb http://repos.mesosphere.com/${DISTRO} ${CODENAME} main" | \
 sudo apt-get -y -qq update && \
 sudo apt-get install -y -qq mesosphere
 
-## project repositories
-# echo "Cloning lcmap-* repositories ..."
-# mkdir -p $LCMAP_BASE \
-# && cd $LCMAP_BASE \
-# && git clone git@github.com:USGS-EROS/lcmap-config.git       \
-# && git clone git@github.com:USGS-EROS/lcmap-logger.git       \
-# && git clone git@github.com:USGS-EROS/lcmap-rest.git         \
-# && git clone git@github.com:USGS-EROS/lcmap-data.git         \
-# && git clone git@github.com:USGS-EROS/lcmap-event.git        \
-# && git clone git@github.com:USGS-EROS/lcmap-see.git          \
-# && git clone git@github.com:USGS-EROS/lcmap-client-py.git    \
-# && git clone git@github.com:USGS-EROS/lcmap-client-docs.git  \
-# && git clone git@github.com:USGS-EROS/lcmap-system.git       \
-# && git clone git@github.com:USGS-EROS/lcmap-test-data.git    \
-# && git clone git@github.com:USGS-EROS/lcmap-model-wrapper.git \
-# && git clone git@github.com:USGS-EROS/lcmap-change-detection-c.git \
-# && cd -
-
-## Default Configuration
-echo "Creating config ..."
-mkdir -p ~/.usgs
-cp $LCMAP_BASE/lcmap-system/config/lcmap.ini.example ~/.usgs/lcmap.ini
-cp $LCMAP_BASE/lcmap-system/config/lcmap.test.ini.example ~/.usgs/lcmap.test.ini
+# nginx
+echo "Installing nginx ..."
+sudo apt-get install -y -qq nginx

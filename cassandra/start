@@ -7,10 +7,9 @@ mkdir -p \
       cassandra/data/commitlog \
       cassandra/data/saved_caches
 
+CASSANDRA_HOME="`pwd`/cassandra"
 
-CASSANDRA_HOME="file://`pwd`/cassandra"
-
-cassandra -f -pdb/pid \
-  -Dcassandra.config=$CASSANDRA_HOME/cassandra.yaml \
+cassandra -f -p$CASSANDRA_HOME/pid \
+  -Dcassandra.config=file://$CASSANDRA_HOME/cassandra.yaml \
   -Dcassandra.logdir=$CASSANDRA_HOME/logs \
-  -Dcassandra.storagedir=$CASSANDRA_HOME/data \
+  -Dcassandra.storagedir=$CASSANDRA_HOME/data

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+LCMAP_HOME=${LCMAP_HOME:-"$HOME/Projects/lcmap"}
+
+## project repositories
+echo "Cloning lcmap-* repositories into $LCMAP_BASE ..."
+mkdir -p $LCMAP_HOME
+cd $LCMAP_HOME
+git clone git@github.com:USGS-EROS/lcmap-config.git
+git clone git@github.com:USGS-EROS/lcmap-logger.git
+git clone git@github.com:USGS-EROS/lcmap-rest.git
+git clone git@github.com:USGS-EROS/lcmap-data.git
+git clone git@github.com:USGS-EROS/lcmap-event.git
+git clone git@github.com:USGS-EROS/lcmap-see.git
+git clone git@github.com:USGS-EROS/lcmap-client-py.git
+git clone git@github.com:USGS-EROS/lcmap-client-docs.git
+git clone git@github.com:USGS-EROS/lcmap-system.git
+git clone git@github.com:USGS-EROS/lcmap-test-data.git
+git clone git@github.com:USGS-EROS/lcmap-model-wrapper.git
+git clone git@github.com:USGS-EROS/lcmap-change-detection-c.git
+cd -

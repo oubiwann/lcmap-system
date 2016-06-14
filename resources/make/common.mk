@@ -17,3 +17,14 @@ update:
 setup:
 	$(GEM) install bundler
 	make docs-setup
+
+install:
+	./bin/setup-ubuntu-trusty
+
+clone:
+	./bin/clone-projects
+
+lcmap.ini:
+	mkdir -p ~/.usgs
+	cp config/lcmap.example.ini ~/.usgs/lcmap.ini
+	cp config/lcmap.example.ini ~/.usgs/lcmap.test.ini
