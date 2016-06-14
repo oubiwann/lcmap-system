@@ -12,7 +12,7 @@ $(SLATE_GIT_HACK):
 
 docs-setup:
 	@echo "\nInstalling and setting up dependencies ..."
-	@cd $(DOCS_DIR) && bundle install
+	@cd $(DOCS_DIR) && bundle install --path=.bundle
 
 devdocs:
 	@echo "\nRunning development server ..."

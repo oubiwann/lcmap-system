@@ -15,7 +15,7 @@ update:
 	$(GEM) update
 
 setup:
-	$(GEM) install bundler
+	$(GEM) install bundler --no-ri --no-rdoc
 	make docs-setup
 
 install:
