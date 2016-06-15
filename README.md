@@ -31,11 +31,11 @@ installed on your system. You will need the following:
 * Ruby
 * Ruby gems
 
-With those installed, you can set up all the other dependencies with the
+With those installed, you can set up this project's dependencies with the
 following:
 
 ```bash
-$ make setup
+$ make setup-docs
 ```
 
 This will install Ruby Bundler and then Slate's dependencies.
@@ -51,4 +51,27 @@ Once complete, you may publish with this target:
 
 ```bash
 $ make publish
+```
+
+## LCMAP Dev. Environment [&#x219F;](#table-of-contents)
+
+If you will be working on other LCMAP system components. You can  Ubuntu 14.04 development environment with the following:
+
+```bash
+export LCMAP_HOME="$HOME/Projects/lcmap"
+export CDPATH="$CDPATH:$LCMAP_HOME"
+make setup-deps
+make clone
+```
+
+With LCMAP system dependencies installed, you can bootstrap DB like so:
+
+```bash
+cd lcmap-data && make db-setup && cd-
+```
+
+Finally, you can launch the LCMAP REST API and an authentication service:
+
+```bash
+make run
 ```

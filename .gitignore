@@ -1,7 +1,8 @@
-docs/Gemfile.lock
+Gemfile.lock
+vendor
+
 docs/build
 docs/master/current
-docs/.bundle
 
 cassandra/data
 cassandra/logs

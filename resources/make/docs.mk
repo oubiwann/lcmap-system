@@ -10,10 +10,6 @@ SLATE_GIT_HACK = $(DOCS_DIR)/.git
 $(SLATE_GIT_HACK):
 	@ln -s $(ROOT_DIR)/.git $(DOCS_DIR)
 
-docs-setup:
-	@echo "\nInstalling and setting up dependencies ..."
-	@cd $(DOCS_DIR) && bundle install --path=.bundle
-
 devdocs:
 	@echo "\nRunning development server ..."
 	@cd $(DOCS_DIR) && bundle exec middleman server

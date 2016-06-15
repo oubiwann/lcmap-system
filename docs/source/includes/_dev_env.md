@@ -2,7 +2,7 @@
 
 If you wish to develop client libraries for the LCMAP system, it may be more convenient to run a local instance of the development environment.
 
-## Installing Dependencies
+## Install Dependencies
 
 Developers using Ubuntu 14.04 can run ``make install`` to install the following:
 
@@ -33,7 +33,7 @@ Following installation of the above dependencies, these administrative consoles 
 * [Chronos](http://localhost:4400/)
 * [RabbitMQ](http://localhost:15672/) (guest/guest)
 
-## Getting LCMAP Projects
+## Get LCMAP Projects
 
 ```bash
 
@@ -58,21 +58,29 @@ Download LCMAP project by running ``make clone``. Set `LCMAP_HOME` environment v
 * lcmap-see
 * lcmap-model-wrapper
 
-## Startup
+## Load Sample Data
 
 ```bash
-cd lcmap-data && make db-setup
-cd lcmap-rest && make test-auth-server
-cd lcmap-rest && make run
+cd lcmap-data
+make db-setup
+
+# db-setup runs these three tasks
+make db-schema
+make db-specs
+make db-tiles
+
 ```
+Use the [lcmap-data](https://github.com/usgs-eros/lcmap-data) project to load a schema, tile-specs, and sample tile data. This loads a small (~60M) amount of Landsat 5/7 surface reflectance, top of atmosphere, and various indices during 2002-01-01/2002-12-31 covering an approximately four square kilometer area in Washington state.
 
-### Initialize the DB:
+See [lcmap-test-data](https://github.com/usgs-eros/lcmap-test-data) for more information.
 
-* Load lcmap-data schema, tile-specs, and sample tile data: ``cd lcmap-data && make db-setup``
+## Start REST API
 
-### Start the REST API:
+The `lcmap-system` project contains a make target to start the LCMAP REST API and a test authentication service.
 
-* Start lcmap-rest test auth service: ``cd lcmap-rest && make test-auth-server``
-* Start lcmap-rest suite of services: ``cd lcmap-rest && make run``
+```bash
+# start the REST API and test authentication service
+make run
+```
 
 At this point you may develop against the lcmap-rest services you have running locally.

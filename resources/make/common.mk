@@ -14,15 +14,28 @@ update:
 	$(GEM) update --system
 	$(GEM) update
 
-setup:
+setup-docs:
+	@echo "\nInstalling documentation up dependencies ..."
 	$(GEM) install bundler --no-ri --no-rdoc
-	make docs-setup
+	bundle install --path vendor/bundle
 
-install:
+setup-deps:
+	@echo "\nInstalling LCMAP system dependencies ..."
 	mkdir -p ~/.usgs
 	cp config/lcmap.example.ini ~/.usgs/lcmap.ini
 	cp config/lcmap.example.ini ~/.usgs/lcmap.test.ini
 	./bin/setup-ubuntu-trusty
 
-clone:
+setup-repo:
+	@echo "\nInstalling LCMAP projects ..."
 	./bin/clone-projects
+
+run-auth:
+	@cd ../lcmap-rest/test/support/auth-server && lein trampoline run
+
+run-rest:
+	@cd ../lcmap-rest && lein trampoline run
+
+run:
+	@$(MAKE) run-auth &
+	@$(MAKE) run-rest &
