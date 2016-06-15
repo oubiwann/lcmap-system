@@ -61,15 +61,11 @@ Download LCMAP project by running ``make clone``. Set `LCMAP_HOME` environment v
 ## Load Sample Data
 
 ```bash
+# assuming $LCMAP_HOME and $CDPATH are set...
 cd lcmap-data
 make db-setup
-
-# db-setup runs these three tasks
-make db-schema
-make db-specs
-make db-tiles
-
 ```
+
 Use the [lcmap-data](https://github.com/usgs-eros/lcmap-data) project to load a schema, tile-specs, and sample tile data. This loads a small (~60M) amount of Landsat 5/7 surface reflectance, top of atmosphere, and various indices during 2002-01-01/2002-12-31 covering an approximately four square kilometer area in Washington state.
 
 See [lcmap-test-data](https://github.com/usgs-eros/lcmap-test-data) for more information.
@@ -79,7 +75,8 @@ See [lcmap-test-data](https://github.com/usgs-eros/lcmap-test-data) for more inf
 The `lcmap-system` project contains a make target to start the LCMAP REST API and a test authentication service.
 
 ```bash
-# start the REST API and test authentication service
+# assuming $LCMAP_HOME and $CDPATH are set...
+cd lcmap-system
 make run
 ```
 
