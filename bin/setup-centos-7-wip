@@ -6,27 +6,26 @@
 
 echo "Installing developer related tools ..."
 sudo yum update -q -y
-sudo yum -q -y install gcc-c++.x86_64 gcc.x86_64 make.x86_64 git.x86_64 curl.x86_64 glibc-devel
+sudo yum -q -y install gcc-c++ gcc make git curl glibc-devel
 
 echo "Installing Oracle Java 8 ..."
-sudo yum -q -y install java-1.8.0-openjdk-devel.x86_64
+sudo yum -q -y install java-1.8.0-openjdk-devel
 sudo alternatives --auto java
 
 echo "Installing GDAL ..."
-sudo yum -q -y install gdal.x86_64 gdal-java.x86_64
+sudo yum -q -y install gdal gdal-java
 
 echo "Installing Python 3 ..."
-sudo yum install -q -y python3.x86_64 python3-devel.x86_64 python-zmq.x86_64
+sudo yum install -q -y python3 python3-devel python-zmq
 
 echo "Installing CCDC deps ..."
 #sudo apt-get install -y -qq libgsl0-dev libgsl0ldbl gsl-bin libmatio-dev libmatio2 gfortran
-#NOTE: cannot find comparable package for libgsl0ldbl --dvh 6/21/16
-sudo yum install -q -y gsl.x86_64 gsl-devel.x86_64 
-sudo yum install -q -y gcc-gfortran.x86_64 libgfortran.x86_64 libgfortran-static.x86_64
-sudo yum install -q -y matio.x86_64 matio-devel.x86_64 
+#NOTE: Cannot find comparable package for libgsl0ldbl --dvh 6/21/16
+#      Research to see what's in it and how else to satisfy the dependency
+sudo yum install -q -y gsl gsl-devel gcc-gfortran libgfortran libgfortran-static matio matio-devel 
 
 echo "Installing Ruby ..."
-sudo yum install -y -q ruby-devel.x86_64
+sudo yum install -y -q ruby-devel
 sudo gem install bundler --no-ri --no-rdoc
 
 echo "Installing Leiningen ..."
@@ -41,7 +40,6 @@ mkdir -p ~/bin \
 # SERVICES
 #
 
-## docker
 echo "Installing docker ..."
 sudo yum install docker-engine
 
@@ -51,35 +49,35 @@ sudo groupadd docker
 echo "Adding $(whoami) to docker group (logout/login for this to take affect)"
 sudo usermod -aG docker $(whoami)
 
-# rabbitmq
+echo "Installing rabbitmq ..."
 sudo yum install rabbitmq-server
 sudo rabbitmq-plugins enable rabbitmq_management
 sudo service rabbitmq-server restart
 
-# mesos
+echo "Installing Mesos ..."
 # Per https://open.mesosphere.com/getting-started/install/
-echo "Installing mesos ..."
 sudo rpm -Uvh http://repos.mesosphere.com/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm
 sudo yum update -y -q
 sudo yum -y -q install mesos marathon mesosphere-zookeeper
 
-# configure & start zookeeper
-sudo echo 1 >> /var/lib/zookeeper/myid
+echo "Configuring Mesos[Zookeeper] ..."
+sudo echo 1 > /var/lib/zookeeper/myid
 sudo echo "server.1=127.0.0.1:2888:3888" > /etc/zookeeper/conf/zoo.cfg
 sudo systemctl start zookeeper
 
-# configure & start mesos
+echo "Configuring Mesos[Master & Slave] ..."
 sudo echo "zk://127.0.0.1:2181/mesos" > /etc/mesos/zk
 sudo echo 1 > /etc/mesos-master/quorum
 
+echo "Restarting Mesos ..."
+sudo service mesos-master restart
+sudo service marathon restart
+sudo service mesos-slave restart
 
-# nginx
-echo "Installing nginx ..."
+echo "Installing Nginx ..."
 sudo apt-get install -y -q nginx
 
-## cassandra
 echo "Installing Cassandra ..."
-
 # Don't create double entries
 CASSANDRA_URL=http://rpm.datastax.com/datastax-ddc/3.7
 test "$(sudo yum-config-manager|grep -c $CASSANDRA_URL)" -eq 0 && \
