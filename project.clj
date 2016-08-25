@@ -4,6 +4,7 @@
   :license {
     :name "NASA Open Source Agreement, Version 1.3"
     :url "http://ti.arc.nasa.gov/opensource/nosa/"}
+  :dependencies [[org.clojure/clojure "1.8.0"]]
   :managed-dependencies [
     [byte-streams "0.2.2"]
     [camel-snake-kebab "0.4.0"]
