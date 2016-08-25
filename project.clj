@@ -48,10 +48,9 @@
     [org.clojure/clojure "1.8.0"]
     [org.clojure/clojurescript "1.9.225"]
     [org.clojure/core.async "0.2.385"]
-    [org.clojure/core.cache "0.6.5"]   ; without them an exception is raised
+    [org.clojure/core.cache "0.6.5"]
     [org.clojure/core.match "0.3.0-alpha4"]
     [org.clojure/core.memoize "0.5.9"]
-    [org.clojure/core.memoize "0.5.9"] ; These two are not used directly, but
     [org.clojure/data.codec "0.1.0"]
     [org.clojure/data.json "0.2.6"]
     [org.clojure/data.xml "0.0.8"]
@@ -81,7 +80,7 @@
   :profiles {
     :uberjar {:aot :all}
     :dev {
-      :source-paths ["dev-resources/src"]}
+      :source-paths ["dev-resources/src"]}}
   :codox {
     :output-path "docs/master/current"
     :doc-paths ["docs/source"]
