@@ -57,6 +57,7 @@
     [org.clojure/data.xml "0.1.0-beta1"]
     [org.clojure/data.zip "0.1.2"]
     [org.clojure/tools.cli "0.3.5"]
+    [org.clojure/tools.namespace "0.3.0-alpha3"]
     [org.xerial.snappy/snappy-java "1.1.2.6"]
     [pandect "0.6.0"]
     [prismatic/schema "1.1.3"]
@@ -66,4 +67,13 @@
     [ring/ring-devel "1.5.0"]
     [ring/ring-jetty-adapter "1.5.0"]
     [ring/ring-json "0.4.0"]
-    [slingshot "0.12.2"]])
+    [slamhound "1.5.5"]
+    [slingshot "0.12.2"]]
+  :plugins [
+    [jonase/eastwood "0.2.3"]
+    [lein-codox "0.9.5"]
+    [lein-environ "1.1.0"]
+    [lein-kibit "0.1.2"]
+    [lein-pprint "1.1.2"]
+    [lein-ring "0.9.7"]
+    [lein-simpleton "1.3.0"]])
