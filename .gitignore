@@ -7,7 +7,3 @@ docs/master/current
 cassandra/data
 cassandra/logs
 cassandra/pid
-
-.lein*
-pom.xml*
-target/*
