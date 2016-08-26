@@ -77,14 +77,4 @@
     [lein-kibit "0.1.2"]
     [lein-pprint "1.1.2"]
     [lein-ring "0.9.7"]
-    [lein-simpleton "1.3.0"]]
-  :profiles {
-    :uberjar {:aot :all}
-    :dev {
-      :source-paths ["dev-resources/src"]}
-  :codox {
-    :output-path "docs/master/current"
-    :doc-paths ["docs/source"]
-    :metadata {
-      :doc/format :markdown
-      :doc "Documentation forthcoming"}})
+    [lein-simpleton "1.3.0"]])
