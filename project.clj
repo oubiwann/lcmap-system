@@ -1,4 +1,4 @@
-(defproject gov.usgs.eros/lcmap-system "1.0.0-SNAPSHOT"
+(defproject gov.usgs.eros/lcmap-system "0.0.1-SNAPSHOT"
   :description "LCMAP System"
   :url "https://github.com/USGS-EROS/lcmap-system"
   :license {
