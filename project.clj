@@ -4,6 +4,7 @@
   :license {
     :name "NASA Open Source Agreement, Version 1.3"
     :url "http://ti.arc.nasa.gov/opensource/nosa/"}
+  :dependencies [[org.clojure/clojure "1.8.0"]]
   :managed-dependencies [
     [byte-streams "0.2.2"]
     [camel-snake-kebab "0.4.0"]
@@ -76,10 +77,6 @@
     [lein-pprint "1.1.2"]
     [lein-ring "0.9.7"]
     [lein-simpleton "1.3.0"]]
-  :dependencies [
-    [clojusc/twig]
-    [org.clojure/clojure]
-    [org.clojure/tools.namespace]]
   :profiles {
     :uberjar {:aot :all}
     :dev {
@@ -89,5 +86,4 @@
     :doc-paths ["docs/source"]
     :metadata {
       :doc/format :markdown
-      :doc "Documentation forthcoming"}}
-  :repl-options {:init-ns lcmap.system.dev})
+      :doc "Documentation forthcoming"}})
