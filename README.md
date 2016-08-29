@@ -1,5 +1,7 @@
 # lcmap-system
 
+[![Dependencies Status][deps-badge]][deps][![Clojars Project][clojars-badge]][clojars]
+
 *Administrator Documentation for LCMAP System Demployment*
 
 [![][lcmap-logo]][lcmap-logo-large]
