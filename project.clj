@@ -70,7 +70,7 @@
     [slingshot "0.12.2"]]
   :plugins [
     [jonase/eastwood "0.2.3"]
-    [lein-codox "0.9.5"]
+    [lein-codox "0.9.6"]
     [lein-environ "1.1.0"]
     [lein-kibit "0.1.2"]
     [lein-pprint "1.1.2"]
