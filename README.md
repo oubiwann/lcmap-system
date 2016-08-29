@@ -13,7 +13,7 @@
 * [System Documentation](#system-documentation-)
 * [Development Environment](#development-environment-)
 * [Project Dependencies](#project-dependencies-)
-
+* [License](#license)
 
 ## About [&#x219F;](#contents)
 
@@ -85,3 +85,10 @@ make run
 ## Project Dependencies [&#x219F;](#contents)
 
 As of version 2.7.0, `lein` offers the ability to manage dependencies of projects, and in conjunction with the `lein-parent` plugin, one may reduce the dependency management across all related projects (eight and growing, in the case of the LCMAP system) to a single `project.clj` file. This is what we have chosen to do, and this is how the `project.clj` file in lcmap-system is used.
+
+
+# License [&#x219F;](#contents)
+
+Copyright © 2015-2016 United States Government
+
+NASA Open Source Agreement, Version 1.3
