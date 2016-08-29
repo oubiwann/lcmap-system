@@ -7,22 +7,28 @@
 [lcmap-logo]: resources/images/lcmap-logo-1-250px.png
 [lcmap-logo-large]: resources/images/lcmap-logo-1-1000px.png
 
-##### Table of Contents
+##### Contents
 
 * [About](#about-)
-* [Development](#development-)
+* [System Documentation](#system-documentation-)
+* [Development Environment](#development-environment-)
+* [Project Dependencies](#project-pependencies-)
 
-## About [&#x219F;](#table-of-contents)
+
+## About [&#x219F;](#contents)
+
+The LCMAP system project is a meta-project of sorts, fulfilling the the following high-level duties:
+* Providing documentation for setting up a complete LCMAP deployment
+* Providing instructions and scripts for bootstrapping an LCMAP development environment, and
+* Maintaining a parent project for the Clojure dependencies of all other Clojure-based LCMAP system projects
+
+
+## System Documentation [&#x219F;](#contents)
 
 This is the source for the LCMAP System documentation site:
  * [http://usgs-eros.github.io/lcmap-system/current/](http://usgs-eros.github.io/lcmap-system/current/)
 
-The means by which one deploys the LCMAP system are documented there.
-
-This docs site utilizes [TripIt's Slate project](https://github.com/tripit/slate).
-
-
-## Development [&#x219F;](#table-of-contents)
+The means by which one deploys the LCMAP system are documented there. The docs site utilizes [TripIt's Slate project](https://github.com/tripit/slate).
 
 If you will be working on the LCMAP system docs locally or publishing changes
 to the Github docs site for LCMAP, you will need to have the appropraite tools
@@ -53,7 +59,7 @@ Once complete, you may publish with this target:
 $ make publish
 ```
 
-## LCMAP Dev. Environment [&#x219F;](#table-of-contents)
+## Development Environment [&#x219F;](#contents)
 
 If you will be working on other LCMAP system components. You can  Ubuntu 14.04 development environment with the following:
 
@@ -75,3 +81,7 @@ Finally, you can launch the LCMAP REST API and an authentication service:
 ```bash
 make run
 ```
+
+## Project Dependencies [&#x219F;](#contents)
+
+As of version 2.7.0, `lein` offers the ability to manage dependencies of projects, and in conjunction with the `lein-parent` plugin, one may reduce the dependency management across all related projects (eight and growing, in the case of the LCMAP system) to a single `project.clj` file. This is what we have chosen to do, and this is how the `project.clj` file in lcmap-system is used.
