@@ -4,8 +4,6 @@
 
 [![][lcmap-logo]][lcmap-logo-large]
 
-[lcmap-logo]: resources/images/lcmap-logo-1-250px.png
-[lcmap-logo-large]: resources/images/lcmap-logo-1-1000px.png
 
 ##### Contents
 
@@ -92,3 +90,18 @@ As of version 2.7.0, `lein` offers the ability to manage dependencies of project
 Copyright © 2015-2016 United States Government
 
 NASA Open Source Agreement, Version 1.3
+
+
+
+<!-- Named page links below: /-->
+
+[travis]: https://travis-ci.org/USGS-EROS/lcmap-system
+[travis-badge]: https://travis-ci.org/USGS-EROS/lcmap-system.png?branch=master
+[deps]: http://jarkeeper.com/usgs-eros/lcmap-system
+[deps-badge]: http://jarkeeper.com/usgs-eros/lcmap-system/status.svg
+[lcmap-logo]: https://raw.githubusercontent.com/USGS-EROS/lcmap-system/master/resources/images/lcmap-logo-1-250px.png
+[lcmap-logo-large]: https://raw.githubusercontent.com/USGS-EROS/lcmap-system/master/resources/images/lcmap-logo-1-1000px.png
+[clojars]: https://clojars.org/gov.usgs.eros/lcmap-system
+[clojars-badge]: https://img.shields.io/clojars/v/gov.usgs.eros/lcmap-system.svg
+[tag-badge]: https://img.shields.io/github/tag/usgs-eros/lcmap-system.svg?maxAge=2592000
+[tag]: https://github.com/usgs-eros/lcmap-system/tags
