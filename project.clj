@@ -80,6 +80,8 @@
     [clojusc/twig]
     [org.clojure/clojure]
     [org.clojure/tools.namespace]]
+  ;; XXX The following profiles cannot be used until this issue is resolved:
+  ;;     * https://github.com/achin/lein-parent/issues/3
   :profiles {
     :uberjar {:aot :all}
     :dev {
