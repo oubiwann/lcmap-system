@@ -83,11 +83,8 @@
   :profiles {
     :uberjar {:aot :all}
     :dev {
-      :source-paths ["dev-resources/src"]}}
-  :codox {
-    :output-path "docs/master/current"
-    :doc-paths ["docs/source"]
-    :metadata {
-      :doc/format :markdown
-      :doc "Documentation forthcoming"}}
+      :source-paths ["dev-resources/src"]
+      :dependencies [[org.clojure/tools.namespace]
+                     [slamhound]]
+      :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}
   :repl-options {:init-ns lcmap.system.dev})
