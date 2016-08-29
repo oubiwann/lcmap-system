@@ -3,7 +3,7 @@
   :url "https://github.com/usgs-/lcmap-system"
   :scm {
     :name "git"
-    :url "https://github.com/usgs-eros/lcmap-system.git"
+    :url "https://github.com/usgs-eros/lcmap-system.git"}
   :license {
     :name "NASA Open Source Agreement, Version 1.3"
     :url "http://ti.arc.nasa.gov/opensource/nosa/"}
