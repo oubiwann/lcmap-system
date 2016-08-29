@@ -1,9 +1,17 @@
 (defproject gov.usgs.eros/lcmap-system "1.0.0-SNAPSHOT"
   :description "LCMAP System"
-  :url "https://github.com/USGS-EROS/lcmap-system"
+  :url "https://github.com/usgs-/lcmap-system"
+  :scm {
+    :name "git"
+    :url "https://github.com/usgs-eros/lcmap-system.git"
   :license {
     :name "NASA Open Source Agreement, Version 1.3"
     :url "http://ti.arc.nasa.gov/opensource/nosa/"}
+  :pom-addition [
+    :developers [
+      :developer {:id "lcmap-dev"}
+                 [:name "LCMAP Dev Team"]
+                 [:url "https://github.com/orgs/USGS-EROS/teams/lcmap"]]]
   :managed-dependencies [
     [byte-streams "0.2.2"]
     [camel-snake-kebab "0.4.0"]
@@ -89,4 +97,12 @@
       :dependencies [[org.clojure/tools.namespace]
                      [slamhound]]
       :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}
-  :repl-options {:init-ns lcmap.system.dev})
+  :repl-options {:init-ns lcmap.system.dev}
+  :deploy-repositories [[
+    "releases" {
+      :url "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+      :creds :gpg}
+    "snapshots" {
+      :url "https://oss.sonatype.org/content/repositories/snapshots/"
+      :creds :gpg}]]
+  )
