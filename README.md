@@ -12,7 +12,7 @@
 * [About](#about-)
 * [System Documentation](#system-documentation-)
 * [Development Environment](#development-environment-)
-* [Project Dependencies](#project-pependencies-)
+* [Project Dependencies](#project-dependencies-)
 
 
 ## About [&#x219F;](#contents)
