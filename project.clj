@@ -94,8 +94,8 @@
     :uberjar {:aot :all}
     :dev {
       :source-paths ["dev-resources/src"]
-      :dependencies [[org.clojure/tools.namespace]
-                     [slamhound]]
+      ;; XXX Same note about deps versions here as above
+      :dependencies [[slamhound "1.5.5"]]
       :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}
   ;; Maven Stuff
   :pom-addition [
