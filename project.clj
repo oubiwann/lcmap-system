@@ -98,6 +98,10 @@
                      [slamhound]]
       :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}
   :repl-options {:init-ns lcmap.system.dev}
+  :repositories [[
+    "maven" {
+      :url "https://oss.sonatype.org/content/repositories/snapshots/"
+      :creds :gpg}]]
   :deploy-repositories [[
     "releases" {
       :url "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
