@@ -11,7 +11,7 @@
     :developers [
       :developer [:name "LCMAP Dev Team"]
                  [:organization "USGS-EROS"]
-                 [:organization-url "https://github.com/orgs/USGS-EROS/teams/lcmap"]]]
+                 [:url "https://github.com/orgs/USGS-EROS/teams/lcmap"]]]
   :managed-dependencies [
     [byte-streams "0.2.2"]
     [camel-snake-kebab "0.4.0"]
