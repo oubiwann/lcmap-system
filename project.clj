@@ -7,11 +7,6 @@
   :license {
     :name "NASA Open Source Agreement, Version 1.3"
     :url "http://ti.arc.nasa.gov/opensource/nosa/"}
-  :pom-addition [
-    :developers [
-      :developer [:name "LCMAP Dev Team"]
-                 [:organization "USGS-EROS"]
-                 [:url "https://github.com/orgs/USGS-EROS/teams/lcmap"]]]
   :managed-dependencies [
     [byte-streams "0.2.2"]
     [camel-snake-kebab "0.4.0"]
@@ -77,17 +72,22 @@
     [slamhound "1.5.5"]
     [slingshot "0.12.2"]]
   :plugins [
-    [jonase/eastwood "0.2.3"]
+    [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
     [lein-codox "0.9.6"]
     [lein-environ "1.1.0"]
-    [lein-kibit "0.1.2"]
+    [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
     [lein-pprint "1.1.2"]
     [lein-ring "0.9.7"]
     [lein-simpleton "1.3.0"]]
+  ;; XXX Right now, jarkeeper.com doesn't know what to do with dependencies
+  ;; that don't have a version number, and thus counts them as out of date.
+  ;; Until that is fixed, we'll put version number here, too: (at least that's
+  ;; better than maintaining different ones in different *files* ...)
   :dependencies [
-    [clojusc/twig]
-    [org.clojure/clojure]
-    [org.clojure/tools.namespace]]
+    [clojusc/twig "0.2.3"]
+    [org.clojure/clojure "1.8.0"]
+    [org.clojure/tools.namespace "0.3.0-alpha3"]]
+  :repl-options {:init-ns lcmap.system.dev}
   ;; XXX The following profiles cannot be used until this issue is resolved:
   ;;     * https://github.com/achin/lein-parent/issues/3
   :profiles {
@@ -97,7 +97,12 @@
       :dependencies [[org.clojure/tools.namespace]
                      [slamhound]]
       :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}
-  :repl-options {:init-ns lcmap.system.dev}
+  ;; Maven Stuff
+  :pom-addition [
+    :developers [
+      :developer [:name "LCMAP Dev Team"]
+                 [:organization "USGS-EROS"]
+                 [:url "https://github.com/orgs/USGS-EROS/teams/lcmap"]]]
   :repositories [[
     "maven" {
       :url "https://oss.sonatype.org/content/repositories/snapshots/"
@@ -108,5 +113,4 @@
       :creds :gpg}
     "snapshots" {
       :url "https://oss.sonatype.org/content/repositories/snapshots/"
-      :creds :gpg}]]
-  )
+      :creds :gpg}]])
