@@ -73,6 +73,7 @@
     [slingshot "0.12.2"]]
   :plugins [
     [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
+    [lein-cljsbuild "1.1.4"]
     [lein-codox "0.9.6"]
     [lein-environ "1.1.0"]
     [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
@@ -88,6 +89,7 @@
     [org.clojure/clojure "1.8.0"]
     [org.clojure/tools.namespace "0.3.0-alpha3"]]
   :repl-options {:init-ns lcmap.system.dev}
+  :target-path "target/%s"
   ;; XXX The following profiles cannot be used until this issue is resolved:
   ;;     * https://github.com/achin/lein-parent/issues/3
   :profiles {
