@@ -23,6 +23,7 @@
     [clojusc/twig "0.2.3"]
     [co.paralleluniverse/pulsar "0.7.5"]
     [com.cemerick/friend "0.2.3"]
+    [com.cemerick/pomegranate "0.3.1"]
     [com.novemberain/langohr "3.6.1"]
     [com.stuartsierra/component "0.3.1"]
     [com.taoensso/timbre "4.7.4"]
@@ -47,8 +48,7 @@
     [http-kit "2.2.0"]
     [jmorton/ring-accept "0.2.0-SNAPSHOT"]
     [leiningen-core "2.7.0"
-      :exclusions [org.apache.maven.wagon/wagon-provider-api
-                   org.codehaus.plexus/plexus-utils]]
+      :exclusions [org.codehaus.plexus/plexus-utils]]
     [me.raynes/fs "1.4.6"]
     [metrics-clojure "2.7.0"]
     [metrics-clojure-jvm "2.7.0"]
