@@ -99,6 +99,11 @@
       ;; XXX Same note about deps versions here as above
       :dependencies [[slamhound "1.5.5"]]
       :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}
+  :test-selectors {
+    :default (complement :integration)
+    :unit    (complement :integration)
+    :db      :integration
+    :all     (constantly true)}
   ;; Maven Stuff
   :pom-addition [
     :developers [
