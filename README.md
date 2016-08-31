@@ -61,7 +61,8 @@ $ make publish
 
 ## Development Environment [&#x219F;](#contents)
 
-If you will be working on other LCMAP system components. You can  Ubuntu 14.04 development environment with the following:
+If you will be working on other LCMAP system components. You can set up an
+Ubuntu 14.04 development environment with the following:
 
 ```bash
 export LCMAP_HOME="$HOME/Projects/lcmap"
@@ -73,7 +74,7 @@ make clone
 With LCMAP system dependencies installed, you can bootstrap DB like so:
 
 ```bash
-cd lcmap-data && make db-setup && cd-
+cd lcmap-data && make db-setup && cd -
 ```
 
 Finally, you can launch the LCMAP REST API and an authentication service:
