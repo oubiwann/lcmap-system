@@ -32,14 +32,23 @@
     [dire "0.5.4"]
     [environ "1.1.0"]
     [gov.usgs.eros/lcmap-client-clj "1.0.0-SNAPSHOT"]
-    [gov.usgs.eros/lcmap-config "1.0.0-SNAPSHOT" :exclusions [org.apache.maven.wagon/wagon-provider-api org.codehaus.plexus/plexus-utils]]
+    [gov.usgs.eros/lcmap-config "1.0.0-SNAPSHOT"
+      :exclusions [org.apache.maven.wagon/wagon-provider-api
+                   org.codehaus.plexus/plexus-utils
+                   org.slf4j/slf4j-api]]
     [gov.usgs.eros/lcmap-data "1.0.0-SNAPSHOT"]
     [gov.usgs.eros/lcmap-event "1.0.0-SNAPSHOT"]
-    [gov.usgs.eros/lcmap-logger "1.0.0-SNAPSHOT" :exclusions [org.slf4j/slf4j-api cheshire com.fasterxml.jackson.core/jackson-core com.fasterxml.jackson.dataformat/jackson-dataformat-cbor com.fasterxml.jackson.dataformat/jackson-dataformat-smile]]
+    [gov.usgs.eros/lcmap-logger "1.0.0-SNAPSHOT"
+      :exclusions [org.slf4j/slf4j-api
+                   cheshire com.fasterxml.jackson.core/jackson-core
+                   com.fasterxml.jackson.dataformat/jackson-dataformat-cbor
+                   com.fasterxml.jackson.dataformat/jackson-dataformat-smile]]
     [gov.usgs.eros/lcmap-see "1.0.0-SNAPSHOT"]
     [http-kit "2.2.0"]
     [jmorton/ring-accept "0.2.0-SNAPSHOT"]
-    [leiningen-core "2.7.0" :exclusions [org.apache.maven.wagon/wagon-provider-api org.codehaus.plexus/plexus-utils]]
+    [leiningen-core "2.7.0"
+      :exclusions [org.apache.maven.wagon/wagon-provider-api
+                   org.codehaus.plexus/plexus-utils]]
     [me.raynes/fs "1.4.6"]
     [metrics-clojure "2.7.0"]
     [metrics-clojure-jvm "2.7.0"]
