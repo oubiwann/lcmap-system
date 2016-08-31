@@ -1,6 +1,6 @@
 (defproject gov.usgs.eros/lcmap-system "1.0.0-SNAPSHOT"
   :description "LCMAP System"
-  :url "https://github.com/usgs-/lcmap-system"
+  :url "https://github.com/usgs-eros/lcmap-system"
   :scm {
     :name "git"
     :url "https://github.com/usgs-eros/lcmap-system.git"}
@@ -117,7 +117,7 @@
     :developers [
       :developer [:name "LCMAP Dev Team"]
                  [:organization "USGS-EROS"]
-                 [:url "https://github.com/orgs/USGS-EROS/teams/lcmap"]]]
+                 [:url "https://github.com/orgs/usgs-eros/teams/lcmap"]]]
   :repositories [[
     "maven" {
       :url "https://oss.sonatype.org/content/repositories/snapshots/"
