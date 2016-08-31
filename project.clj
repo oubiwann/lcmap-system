@@ -20,7 +20,7 @@
     [clojusc/mesomatic "0.28.2-SNAPSHOT"]
     [clojusc/ring-xml "0.0.6"]
     [clojusc/twig "0.2.3"]
-    [co.paralleluniverse/pulsar "0.7.5"]
+    [co.paralleluniverse/pulsar "0.7.6"]
     [com.cemerick/friend "0.2.3"]
     [com.cemerick/pomegranate "0.3.1"]
     [com.novemberain/langohr "3.6.1"]
