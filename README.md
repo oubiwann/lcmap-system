@@ -73,7 +73,7 @@ make clone
 With LCMAP system dependencies installed, you can bootstrap DB like so:
 
 ```bash
-cd lcmap-data && make db-setup && cd-
+cd lcmap-data && make db-setup && cd -
 ```
 
 Finally, you can launch the LCMAP REST API and an authentication service:
