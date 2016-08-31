@@ -10,7 +10,6 @@
   :managed-dependencies [
     [byte-streams "0.2.2"]
     [camel-snake-kebab "0.4.0"]
-    [clj-gdal "0.3.5-SNAPSHOT"]
     [clj-gdal "0.4.0-ALPHA"]
     [clj-http "3.1.0"]
     [clj-time "0.12.0"]
