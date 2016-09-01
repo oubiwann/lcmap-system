@@ -18,4 +18,5 @@ git clone git@github.com:USGS-EROS/lcmap-system.git
 git clone git@github.com:USGS-EROS/lcmap-test-data.git
 git clone git@github.com:USGS-EROS/lcmap-model-wrapper.git
 git clone git@github.com:USGS-EROS/lcmap-change-detection-c.git
+git clone git@github.com:USGS-EROS/lcmap-sdc.git
 cd -
