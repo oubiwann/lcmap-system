@@ -18,6 +18,7 @@
     [clojure-ini "0.0.2"]
     [clojurewerkz/cassaforte "2.0.2"]
     [clojusc/mesomatic "0.28.2-SNAPSHOT"]
+    [clojusc/mesomatic-async "0.28.2-SNAPSHOT"]
     [clojusc/ring-xml "0.0.6"]
     [clojusc/twig "0.2.3"]
     [co.paralleluniverse/pulsar "0.7.6"]
