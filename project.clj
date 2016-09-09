@@ -33,6 +33,7 @@
     [dire "0.5.4"]
     [environ "1.1.0"]
     [gov.usgs.eros/lcmap-client-clj "1.0.0-SNAPSHOT"]
+    [gov.usgs.eros/lcmap-commons "1.0.0-SNAPSHOT"]
     [gov.usgs.eros/lcmap-config "1.0.0-SNAPSHOT"
       :exclusions [org.apache.maven.wagon/wagon-provider-api
                    org.codehaus.plexus/plexus-utils
@@ -127,6 +128,7 @@
     "releases" {
       :url "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
       :creds :gpg}
-    "snapshots" {
-      :url "https://oss.sonatype.org/content/repositories/snapshots/"
-      :creds :gpg}]])
+     "snapshots" {
+       :url "https://oss.sonatype.org/content/repositories/snapshots/"
+       :creds :gpg}]])
+
