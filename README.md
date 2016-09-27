@@ -2,7 +2,7 @@
 
 [![Dependencies Status][deps-badge]][deps][![Clojars Project][clojars-badge]][clojars]
 
-*Administrator Documentation for LCMAP System Demployment*
+*Administrator Documentation for LCMAP System Deployment*
 
 [![][lcmap-logo]][lcmap-logo-large]
 
