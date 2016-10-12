@@ -84,7 +84,7 @@
   :plugins [
     [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
     [lein-cljsbuild "1.1.4"]
-    [lein-codox "0.10.0"]
+    [lein-codox "0.10.1"]
     [lein-environ "1.1.0"]
     [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
     [lein-pprint "1.1.2"]
