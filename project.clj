@@ -20,7 +20,7 @@
     [spootnik/mesomatic "1.0.1-r0"]
     [spootnik/mesomatic-async "1.0.1-r0"]
     [clojusc/ring-xml "0.0.6"]
-    [clojusc/twig "0.2.3"]
+    [clojusc/twig "0.2.6"]
     [co.paralleluniverse/pulsar "0.7.6"]
     [com.cemerick/friend "0.2.3"]
     [com.cemerick/pomegranate "0.3.1"]
@@ -84,7 +84,7 @@
   :plugins [
     [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
     [lein-cljsbuild "1.1.4"]
-    [lein-codox "0.9.6"]
+    [lein-codox "0.10.1"]
     [lein-environ "1.1.0"]
     [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
     [lein-pprint "1.1.2"]
@@ -95,7 +95,7 @@
   ;; Until that is fixed, we'll put version number here, too: (at least that's
   ;; better than maintaining different ones in different *files* ...)
   :dependencies [
-    [clojusc/twig "0.2.3"]
+    [clojusc/twig "0.2.6"]
     [org.clojure/clojure "1.8.0"]
     [org.clojure/tools.namespace "0.3.0-alpha3"]]
   :repl-options {:init-ns lcmap.system.dev}
@@ -120,15 +120,15 @@
       :developer [:name "LCMAP Dev Team"]
                  [:organization "USGS-EROS"]
                  [:url "https://github.com/orgs/usgs-eros/teams/lcmap"]]]
-  :repositories [[
-    "maven" {
+  :repositories [
+    ["maven" {
       :url "https://oss.sonatype.org/content/repositories/snapshots/"
       :creds :gpg}]]
-  :deploy-repositories [[
-    "releases" {
+  :deploy-repositories [
+    ["releases" {
       :url "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
       :creds :gpg}
      "snapshots" {
-       :url "https://oss.sonatype.org/content/repositories/snapshots/"
-       :creds :gpg}]])
+      :url "https://oss.sonatype.org/content/repositories/snapshots/"
+      :creds :gpg}]])
 

@@ -12,3 +12,4 @@ cassandra/pid
 pom.xml*
 target/*
 
+.nrepl*
